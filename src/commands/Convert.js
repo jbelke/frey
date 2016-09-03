@@ -5,8 +5,7 @@ import path from 'path'
 import async from 'async'
 import globby from 'globby'
 import depurar from 'depurar'; const debug = depurar('frey')
-import Hcltool021 from '../Hcltool021'
-import Hcltool0115 from '../Hcltool0115'
+import Hcltool from '../Hcltool'
 import fs from 'fs'
 import _ from 'lodash'
 import tomlify from 'tomlify-j0.4'
@@ -35,32 +34,14 @@ class Convert extends Command {
     cb(null, { global: { ansiblecfg: parsed } })
   }
 
-  _parseHcl021 (tfFile, cb) {
+  _parseHcl (tfFile, cb) {
     const opts = {
       args: {},
       runtime: this.runtime
     }
 
     opts.args[tfFile] = constants.SHELLARG_APPEND_AS_IS
-    const hclTool = new Hcltool021(opts)
-
-    hclTool.exe((err, stdout) => {
-      if (err) {
-        return cb(err)
-      }
-
-      return cb(null, JSON.parse(stdout))
-    })
-  }
-
-  _parseHcl0115 (tfFile, cb) {
-    const opts = {
-      args: {},
-      runtime: this.runtime
-    }
-
-    opts.args[tfFile] = constants.SHELLARG_APPEND_AS_IS
-    const hclTool = new Hcltool0115(opts)
+    const hclTool = new Hcltool(opts)
 
     hclTool.exe((err, stdout) => {
       if (err) {
@@ -72,21 +53,11 @@ class Convert extends Command {
   }
 
   _parseTfFile (tfFile, cb) {
-    // @todo We unfortunately have to run two versions of hcltool due to
-    // different bugs hurting both 0.1.15 and 0.2.1
-    // https://github.com/virtuald/pyhcl/issues/7
-    // When that is resolved, let's just have 1 version
-    this._parseHcl021(tfFile, (err, parsed) => {
+    this._parseHcl(tfFile, (err, parsed) => {
       if (err) {
-        this._parseHcl0115(tfFile, (err, parsed) => {
-          if (err) {
-            return cb(err)
-          }
-          return cb(null, { infra: parsed })
-        })
-      } else {
-        return cb(null, { infra: parsed })
+        return cb(err)
       }
+      return cb(null, { infra: parsed })
     })
   }
 

@@ -31,13 +31,14 @@ Unreleased and unplanned todos
 - [ ] Offer cast5 encryption and decryption for `env.sh` (then remove `rebuild-env.sh` script from dependents)
 - [ ] `Show` should use `terraformInventory` just like `Remote`, instead of `public_addresses`
 - [ ] Speed up prepare by writing hashses do disk and comparing (just like depmake does)
-- [ ] Deprecate dual pyhcl usage now that we verified 0.2.1 solves all troubles
 - [ ] Symlink ansible if needed: `mkdir -p ~/.frey/tools/ansible/2.0.1.0/pip/bin/ && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible-playbook ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible-playbook`
 - [ ] Deal with pip returning version `1.1` in some cases (we error out on that currently with an unrecognized version)
 
 ## v0.3.20 (Unreleased)
 
-- [ ] Upgrade eslint and fix newly found linting issues
+- [x] Deprecate dual pyhcl-0.1.15 usage now that we verified 0.2.1 solves all troubles
+- [x] Upgrade babel
+- [x] Upgrade eslint and fix newly found linting issues
 
 ## v0.3.19 (2016-09-02)
 

@@ -17,8 +17,7 @@ Reconstructing private key '{root}/test/scenario/digitalocean/frey-digitalocean.
 Found 'terraform' with version '0.6.15'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
-Found 'pyhcl-0.1.15' with version '0.1.15'
-Found 'pyhcl-0.2.1' with version '0.2.1'
+Found 'pyhcl' with version '0.2.1'
 Found 'ansible' with version '2.0.2'
 --> {hostname} - refresh
 --> Saved state to '{root}/test/scenario/digitalocean/Frey-state-terraform.tfstate'
@@ -152,8 +151,8 @@ changed: [{ip}] => (item=pwd)
 changed: [{ip}] => (item=echo db)
 
 PLAY RECAP *********************************************************************
-{ip} : ok=2    changed=1    unreachable=0    failed=0   
-{ip} : ok=2    changed=1    unreachable=0    failed=0   
+{ip} : ok=2    changed=1    unreachable=0    failed=0
+{ip} : ok=2    changed=1    unreachable=0    failed=0
 
 --> {hostname} - setup
 --> {hostname} - deploy
@@ -172,6 +171,6 @@ public_addresses = {ip}
 db-0,ansible_facts.ansible_service_mgr = upstart
 web-0,ansible_facts.ansible_service_mgr = upstart
 Done
-Cleaning up '{root}/test/scenario/digitalocean/frey-digitalocean.pem' after process exit with code '0' 
+Cleaning up '{root}/test/scenario/digitalocean/frey-digitalocean.pem' after process exit with code '0'
 Finished
 (maybe) Destroying..

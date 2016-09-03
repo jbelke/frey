@@ -10,8 +10,7 @@ Creating private encrypted key '{tmpdir}/frey-sshkeygen.pem.cast5'
 Found 'terraform' with version '0.6.15'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
-Found 'pyhcl-0.1.15' with version '0.1.15'
-Found 'pyhcl-0.2.1' with version '0.2.1'
+Found 'pyhcl' with version '0.2.1'
 Found 'ansible' with version '2.0.2'
 Done
 {tmpdir}/frey-sshkeygen.pem
@@ -27,8 +26,7 @@ Creating public key '{tmpdir}/frey-sshkeygen.pub'
 Found 'terraform' with version '0.6.15'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
-Found 'pyhcl-0.1.15' with version '0.1.15'
-Found 'pyhcl-0.2.1' with version '0.2.1'
+Found 'pyhcl' with version '0.2.1'
 Found 'ansible' with version '2.0.2'
 Done
 {tmpdir}/frey-sshkeygen.pem

@@ -4,9 +4,9 @@ import _ from 'lodash'
 import App from './App'
 // import constants from './constants'
 
-class Hcltool0115 extends App {
+class HclTool extends App {
   exe (cb) {
-    const hcltoolProps = _.find(this.runtime.deps, { name: 'pyhcl-0.1.15' })
+    const hcltoolProps = _.find(this.runtime.deps, { name: 'pyhcl' })
     const defaults = {
       args: {},
       env: hcltoolProps.env || {},
@@ -20,4 +20,4 @@ class Hcltool0115 extends App {
   }
 }
 
-module.exports = Hcltool0115
+module.exports = HclTool
