@@ -35,8 +35,10 @@ Unreleased and unplanned todos
 - [ ] Symlink ansible if needed: `mkdir -p ~/.frey/tools/ansible/2.0.1.0/pip/bin/ && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible-playbook ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible-playbook`
 - [ ] Deal with pip returning version `1.1` in some cases (we error out on that currently with an unrecognized version)
 
-## v0.3.19 (2016-05-08)
+## v0.3.19 (2016-09-02)
 
+- [x] Upgrade depurar
+- [x] Change website to use Jekyll (vs middleman)
 - [x] Upgrade to Ansible 2.0.2.0 as that fixes an issue with getting remote tempdir https://github.com/ansible/ansible/issues/13876
 
 ## v0.3.18 (2016-04-16)
