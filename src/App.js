@@ -36,7 +36,7 @@ class App {
     if (!str.replace) {
       throw new Error('You should pass _escape a string. But you passed: ' + str)
     }
-    return str.replace(/([^a-zA-Z0-9\-\.\/\,\_])/g, '\\$1')
+    return str.replace(/([^a-zA-Z0-9\-\.\/,_])/g, '\\$1')
   }
 
   _objectToEnv (obj, opts = {}) {

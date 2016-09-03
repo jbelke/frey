@@ -27,7 +27,7 @@ class Format extends Command {
     info.matchMultiLineString = line.match(/('''|""")/)
     info.matchKey = line.match(/^\s*([a-z_]+)\s*=\s*/)
     info.matchSingleLineJSON = line.match(/^\s*[a-z_]+\s*=\s*"({.+})"\s*$/)
-    info.matchHeader = line.match(/^\s*\[\[?([a-z0-9\.\-\_]+)\]\]?\s*$/i)
+    info.matchHeader = line.match(/^\s*\[\[?([a-z0-9\.\-_]+)\]\]?\s*$/i)
     if (info.matchHeader) {
       info.insideHeaderKey = info.matchHeader[1]
       info.parts = info.insideHeaderKey.split('.')
@@ -125,7 +125,10 @@ class Format extends Command {
             }
 
             while (newLine.indexOf(val) > -1) {
-              newLine = newLine.replace(val, '${var.${key}}')
+              // @todo this line used to read:
+              // newLine = newLine.replace(val, '${var.${key}}')
+              // but that seems weird? If we get errors though, best revert:
+              newLine = newLine.replace(val, '${var.' + key + '}')
             }
           })
         }

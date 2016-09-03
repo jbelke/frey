@@ -253,7 +253,7 @@ class Config extends Command {
     // ssh, and all treats multiple option arguments as one.
     // So we remove all double-quotes here. If that poses problems I don't foresee at
     // this point, the replace has to be limited in scope:
-    encoded = encoded.replace(/\"/g, '')
+    encoded = encoded.replace(/"/g, '')
 
     debug('Writing %s', this.bootCargo._renderConfig.global.ansiblecfg_file)
 

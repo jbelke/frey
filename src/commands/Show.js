@@ -15,7 +15,7 @@ class Show extends Command {
     this.boot = [
       '_createTmpDir',
       'output',
-      'public_addresses',
+      'publicAddresses',
       'endpoint',
       'facts'
     ]
@@ -45,13 +45,13 @@ class Show extends Command {
     terraform.exe(cb)
   }
 
-  public_addresses (cargo, cb) {
+  publicAddresses (cargo, cb) {
     if (!_.has(this.runtime.config, 'infra')) {
-      debug('Skipping public_addresses as there are no infra instructions')
+      debug('Skipping publicAddresses as there are no infra instructions')
       return cb(null)
     }
     if (!_.has(this.runtime.config, 'infra.output.public_addresses')) {
-      debug('Skipping public_addresses as infra.output.public_addresses was not defined. ')
+      debug('Skipping publicAddresses as infra.output.public_addresses was not defined. ')
       return cb(null)
     }
 
@@ -124,8 +124,8 @@ class Show extends Command {
         // @todo this is a hack to prevent failures like:
         // https://travis-ci.org/kvz/frey/builds/116576951#L931
         // where there must be some odd character leaking into the acceptance test fixtures
-        val = val.replace(/[^A-Za-z0-9\.\-\_]/mg, '')
-        fqdn = fqdn.replace(/[^A-Za-z0-9\.\-\_]/mg, '')
+        val = val.replace(/[^A-Za-z0-9\.\-_]/mg, '')
+        fqdn = fqdn.replace(/[^A-Za-z0-9\.\-_]/mg, '')
 
         factList.push(`${fqdn},${key} = ${val}`)
       })
@@ -137,7 +137,7 @@ class Show extends Command {
   main (cargo, cb) {
     const results = {
       output: this.bootCargo.output,
-      public_addresses: this.bootCargo.public_addresses,
+      public_addresses: this.bootCargo.publicAddresses,
       facts: this.bootCargo.facts,
       endpoint: this.bootCargo.endpoint
     }
