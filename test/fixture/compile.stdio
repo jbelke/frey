@@ -1,5 +1,5 @@
 ACCPTST:STDIO_SKIP_COMPARE
---> Frey version '0.3.18'
+--> Frey version '0.3.19'
 --> Will run: [ 'init', 'config' ]
 --> {hostname} - init
 --> {hostname} - config
