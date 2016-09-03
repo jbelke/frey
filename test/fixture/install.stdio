@@ -16,19 +16,19 @@ Found 'pyhcl' with version '0.2.1'
 Found 'ansible' with version '2.0.2'
 --> {hostname} - install
 
-PLAY [Local stuff]
+PLAY [Local stuff] 
 
-TASK [setup]
+TASK [setup] 
 ok: [local]
 
-TASK [{root}/roles/pwd/v1.0.0 : Execute arbitrary command]
+TASK [{root}/roles/pwd/v1.0.0 : Execute arbitrary command] 
 changed: [local]
 
-TASK [Showcase we can access FREY_ environment variables]
+TASK [Showcase we can access FREY_ environment variables] 
 changed: [local]
 
-PLAY RECAP
-local                      : ok=3    changed=2    unreachable=0    failed=0
+PLAY RECAP 
+local                      : ok=3    changed=2    unreachable=0    failed=0   
 
 Done
 Finished
