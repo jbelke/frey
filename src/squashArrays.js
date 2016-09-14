@@ -10,6 +10,12 @@ const squashArrays = (i, exceptions, depth) => {
     exceptions = [
       'playbooks',
       'roles',
+      'networks',
+      'munin_hosts',
+      'munin_alerts',
+      'munin_node_plugins',
+      'rsyslog_rsyslog_d_files',
+      'nodejs_npm_global_packages',
       'tags'
     ]
   }
