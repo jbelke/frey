@@ -1,5 +1,5 @@
 'use strict'
-import depurar from 'depurar'; const debug = depurar('frey')
+// import depurar from 'depurar'; const debug = depurar('frey')
 import _ from 'lodash'
 
 // HCL nests EVERYTHING into an array. While that's cool.. going back to
@@ -25,7 +25,7 @@ const squashArrays = (i, exceptions, depth) => {
         if (val.length === 1) {
           if (exceptions.indexOf(key) === -1) {
             if (_.isPlainObject(val[0])) {
-              debug(`squashed key=${key} with val=${val} at depth=${depth}`)
+              // debug(`squashed key=${key} with val=${val} at depth=${depth}`)
               input[key] = val[0]
             }
           }
