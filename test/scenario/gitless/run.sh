@@ -19,7 +19,7 @@ fi
 
 rm -rf "${__sysTmpDir}/frey-gitless" || true
 mkdir -p "${__sysTmpDir}/frey-gitless"
-cp Freyfile.toml "${__sysTmpDir}/frey-gitless/"
+cp Freyfile.hcl "${__sysTmpDir}/frey-gitless/"
 
 "${__node}" "${__root}/${__codelib}/cli.js" validate \
   --force-yes \

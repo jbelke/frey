@@ -1,23 +1,22 @@
-[infra.resource.aws_dynamodb_table.basic-dynamodb-table]
+"infra" resource aws_dynamodb_table "basic-dynamodb-table" {
   hash_key       = "UserId"
   name           = "GameScores"
   range_key      = "GameTitle"
   read_capacity  = 20
   write_capacity = 20
-
-  [[infra.resource.aws_dynamodb_table.basic-dynamodb-table.attribute]]
+  attribute {
     name = "TopScore"
     type = "N"
-
-  [[infra.resource.aws_dynamodb_table.basic-dynamodb-table.attribute]]
+  }
+  attribute {
     name = "UserId"
     type = "N"
-
-  [[infra.resource.aws_dynamodb_table.basic-dynamodb-table.attribute]]
+  }
+  attribute {
     name = "GameTitle"
     type = "S"
-
-  [infra.resource.aws_dynamodb_table.basic-dynamodb-table.global_secondary_index]
+  }
+  global_secondary_index {
     hash_key           = "GameTitle"
     name               = "GameTitleIndex"
     non_key_attributes = ["UserId"]
@@ -25,3 +24,6 @@
     range_key          = "TopScore"
     read_capacity      = 10
     write_capacity     = 10
+  }
+}
+

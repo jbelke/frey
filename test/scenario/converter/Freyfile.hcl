@@ -1,14 +1,3 @@
---> Frey version '0.3.19'
---> Will run: [ 'init', 'config', 'deps', 'convert', 'format' ]
---> {hostname} - init
---> {hostname} - config
---> {hostname} - deps
---> {hostname} - convert
---> Skipping confirmation for 'About to convert existing TOML, YAML, CFG and TF to HCL files in your project dir. Make sure your files are under source control as this is a best-effort procedure. May I proceed?' as '--force-yes' applies
---> {hostname} - format
---> Skipping confirmation for 'About to rewrite all HCL files in your project dir. Make sure your files are under source control as this is a best-effort procedure. May I proceed?' as '--force-yes' applies
---> Skipping confirmation for 'About to rewrite all HCL files in your project dir. Make sure your files are under source control as this is a best-effort procedure. May I proceed?' as '--force-yes' applies
-Done
 "global" "ansiblecfg" "defaults" {}
 "global" "ansiblecfg" ssh_connection {
   ssh_args = "-o ControlMaster=auto -o ControlPersist=60s"
@@ -140,4 +129,3 @@ install {
   }
 }
 
-Finished

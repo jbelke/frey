@@ -67,7 +67,7 @@ class Deps extends Command {
     deps.push({
       type: 'App',
       name: 'terraform',
-      version: '0.6.15',
+      version: '0.7.3',
       range: '{{{self.version}}}',
       dir: '{{{config.global.tools_dir}}}/terraform/{{{self.version}}}',
       exe: '{{{self.dir}}}/terraform',
@@ -132,32 +132,6 @@ class Deps extends Command {
         return version
       },
       cmdInstall: 'sudo easy_install --upgrade pip'
-    })
-
-    deps.push({
-      type: 'App',
-      name: 'pyhcl',
-      range: '0.2.1',
-      version: '0.2.1',
-      dir: '{{{config.global.tools_dir}}}/pyhcl/{{{self.version}}}',
-      exe: '{{{self.dir}}}/pip/bin/hcltool',
-      env: {
-        PYTHONPATH: '{{{parent.dir}}}/pip/lib/python2.7/site-packages'
-      },
-      cmdVersion: 'awk \'/^Version:/ {print $NF}\' {{{config.global.tools_dir}}}/pyhcl/{{{self.version}}}/pip/lib/python2.7/site-packages/pyhcl-{{{self.version}}}-py2.7.egg-info/PKG-INFO || true',
-      versionTransformer (stdout) {
-        return stdout.trim()
-      },
-      cmdInstall:
-        'mkdir -p {{{self.dir}}} && ' +
-        'pip install ' +
-        '--install-option=\'--prefix=pip\' ' +
-        '--ignore-installed ' +
-        '--force-reinstall ' +
-        '--root \'{{{self.dir}}}\' ' +
-        '--upgrade ' +
-        '--disable-pip-version-check ' +
-        'pyhcl=={{{self.version}}}'
     })
 
     deps.push({

@@ -80,8 +80,10 @@ class Utils {
     if (opts.failhard === true) {
       const js = JSON.stringify(newSubject)
       if (`${js}`.indexOf('{{{') > -1) {
-        debug(flattened)
-        throw new Error(`Unable to render vars in '${js}'. `)
+        let nonParsed = `${js}`.match(/({{{[^}]+}}})/g)
+        let list = nonParsed.join(', ')
+        debug({haystack: js})
+        throw new Error(`Unable to render var(s): ${list}. Run with DEBUG=Frey:* to see the relevant haystack. `)
       }
     }
 

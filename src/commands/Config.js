@@ -1,6 +1,8 @@
 'use strict'
 import Command from '../Command'
+import squashArrays from '../squashArrays'
 import utils from '../Utils'
+import json2hcl from '../json2hcl'
 import path from 'path'
 import depurar from 'depurar'; const debug = depurar('frey')
 import globby from 'globby'
@@ -9,15 +11,15 @@ import fs from 'fs'
 import _ from 'lodash'
 import INI from 'ini'
 import YAML from 'js-yaml'
-import TOML from 'toml'
 import {unflatten} from 'flat'
+// import constants from '../constants'
 
 class Config extends Command {
   constructor (name, runtime) {
     super(name, runtime)
     this.boot = [
-      '_findTomlFiles',
-      '_readTomlFiles',
+      '_findHclFiles',
+      '_readHclFiles',
       '_mergeToOneConfig',
       '_applyDefaults',
       '_renderConfig',
@@ -32,71 +34,74 @@ class Config extends Command {
     ]
   }
 
-  _findTomlFiles (cargo, cb) {
-    const pattern = `${this.runtime.init.cliargs.projectDir}/*.toml`
+  _findHclFiles (cargo, cb) {
+    const pattern = `${this.runtime.init.cliargs.projectDir}/*.hcl`
     debug(`Reading from '${pattern}'`)
     return globby(pattern)
-      .then((tomlFiles) => {
-        return cb(null, tomlFiles)
+      .then((hclFiles) => {
+        return cb(null, hclFiles)
       })
       .catch(cb)
   }
 
-  _readTomlFiles (tomlFiles, cb) {
-    const tomlParsedItems = []
+  _readHclFiles (hclFiles, cb) {
+    const hclParsedItems = []
     let mainErr = null
 
-    const q = async.queue((tomlFile, next) => {
-      fs.readFile(tomlFile, 'utf-8', (err, buf) => {
+    const q = async.queue((hclFile, next) => {
+      fs.readFile(hclFile, 'utf-8', (err, buf) => {
         if (err) {
           mainErr = err
           return next()
         }
 
-        let parsed = {}
-        let error
-        try {
-          parsed = TOML.parse(`${buf}`)
-        } catch (e) {
-          error = e
-        }
+        json2hcl(buf, true, (err, parsed) => {
+          if (err) {
+            mainErr = err
+            return next()
+          }
 
-        if (!parsed || error) {
-          let msg = `Could not parse TOML '${tomlFile}' starting with: \n\n'` + _.truncate(buf, {length: 1000}) + `'\n\n`
-          msg += error
-          msg += '\n\nHint: Did you not surround your strings with double-quotes?'
-          mainErr = new Error(msg)
+          hclParsedItems.push(parsed)
+
           return next()
-        }
-
-        // debug({
-        //   read: tomlFile,
-        //   buf: buf,
-        //   parsed: parsed
-        // })
-
-        tomlParsedItems.push(parsed)
-        return next()
+        })
       })
     }, 1)
 
     q.drain = () => {
-      return cb(mainErr, tomlParsedItems)
+      // debug(hclParsedItems)
+      return cb(mainErr, hclParsedItems)
     }
 
-    q.push(tomlFiles)
+    q.push(hclFiles)
   }
 
-  _mergeToOneConfig (tomlParsedItems, cb) {
+  _mergeToOneConfig (hclParsedItems, cb) {
     let config = {}
+    let squashed = {}
 
-    tomlParsedItems.forEach(function (parsedItem) {
+    hclParsedItems.forEach((parsedItem) => {
+      for (let key in parsedItem) {
+        if (!_.isArray(parsedItem[key])) {
+          parsedItem[key] = [ parsedItem[key] ]
+        }
+      }
       config = _.merge(config, parsedItem)
     })
 
-    // debug(config)
+    squashed = squashArrays(config)
 
-    return cb(null, config)
+    let newConfig = {}
+    for (let parent in squashed) {
+      newConfig[parent] = {}
+      for (let key in config[parent]) {
+        newConfig[parent] = _.merge(newConfig[parent], config[parent][key])
+      }
+    }
+
+    debug(newConfig)
+
+    return cb(null, newConfig)
   }
 
   _applyDefaults (cargo, cb) {
@@ -200,15 +205,8 @@ class Config extends Command {
   _writeTerraformFile (cargo, cb) {
     const cfgBlock = _.cloneDeep(_.get(this.bootCargo._renderConfig, 'infra'))
 
-    // Automatically add all FREY_* environment variables to Terraform config
-    _.forOwn(this.runtime.init.env, (val, key) => {
-      if (_.startsWith(key, 'FREY_')) {
-        _.set(cfgBlock, 'variable.' + key + '.type', 'string')
-      }
-    })
-
     if (!cfgBlock) {
-      debug('No infra instructions found in merged toml')
+      debug('No infra instructions found in merged hcl')
       fs.unlink(this.bootCargo._renderConfig.global.infra_file, (err) => {
         if (err) {
            // That's not fatal
@@ -218,10 +216,19 @@ class Config extends Command {
       return
     }
 
+    // Automatically add all FREY_* environment variables to Terraform config
+    _.forOwn(this.runtime.init.env, (val, key) => {
+      if (_.startsWith(key, 'FREY_')) {
+        let path = 'variable.' + key + '.type'
+        debug(`injecting 'string' into ${path}`)
+        _.set(cfgBlock, path, 'string')
+      }
+    })
+
     const encoded = JSON.stringify(cfgBlock, null, '  ')
     if (!encoded) {
-      debug({cfgBlock: cfgBlock})
-      return cb(new Error('Unable to convert project to Terraform infra JSON'))
+      debug({encoded: encoded})
+      return cb(new Error('Unable to convert project to Terraform infra HCL'))
     }
 
     debug('Writing %s', this.bootCargo._renderConfig.global.infra_file)
@@ -233,7 +240,7 @@ class Config extends Command {
     const cfgBlock = _.get(this.bootCargo._renderConfig, 'global.ansiblecfg')
 
     if (!cfgBlock) {
-      debug('No config instructions found in merged toml')
+      debug('No config instructions found in merged hcl')
       fs.unlink(this.bootCargo._renderConfig.global.ansiblecfg_file, (err) => {
         if (err) {
           // That's not fatal

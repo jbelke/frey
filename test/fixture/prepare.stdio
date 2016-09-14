@@ -5,19 +5,15 @@ ACCPTST:STDIO_SKIP_COMPARE
 --> {hostname} - config
 --> {hostname} - deps
 --> {hostname} - prepare
-Creating private key '{tmpdir}/frey-customprepare.pem'
-Creating public key '{tmpdir}/frey-customprepare.pub'
-Creating private encrypted key '{tmpdir}/frey-customprepare.pem.cast5'
-Found 'terraform' with version '0.6.15'
+Found 'terraform' with version '0.7.3'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
-Found 'pyhcl' with version '0.2.1'
 Found 'ansible' with version '2.0.2'
 Done
 Running help on all required tools
   --version             show program's version number and exit
-usage: terraform [--version] [--help] <command> [<args>]
-    version     Prints the Terraform version
+usage: terraform [--version] [--help] <command> [args]
+    version            Prints the Terraform version
   -version
     	print version information and exit
 All tools were able to execute

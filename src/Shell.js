@@ -58,9 +58,14 @@ class Shell extends Base {
     return this.exe(scriptArgs, cmdOpts, cb)
   }
 
-  _debugCmd (env, args) {
+  _debugCmd (opts, args) {
     let debugCmd = ''
-    _.forOwn(env, (val, key) => {
+
+    if (opts.input) {
+      debugCmd += `echo '${opts.input}' | \\\n`
+    }
+
+    _.forOwn(opts.env, (val, key) => {
       if (_.has(process.env, key)) {
         return
       }
@@ -90,6 +95,7 @@ class Shell extends Base {
   exe (cmdArgs, cmdOpts = {}, cb) {
     if (cmdOpts.env === undefined) { cmdOpts.env = {} }
     if (cmdOpts.verbose === undefined) { cmdOpts.verbose = true }
+    if (cmdOpts.input === undefined) { cmdOpts.input = undefined }
     if (cmdOpts.stdin === undefined) { cmdOpts.stdin = 'ignore' }
     if (cmdOpts.stdout === undefined) { cmdOpts.stdout = 'pipe' }
     if (cmdOpts.stderr === undefined) { cmdOpts.stderr = 'pipe' }
@@ -100,10 +106,11 @@ class Shell extends Base {
     const opts = {
       cwd: dir,
       env: this._buildChildEnv(cmdOpts.env),
-      stdio: [ cmdOpts.stdin, cmdOpts.stdout, cmdOpts.stderr ]
+      stdio: [ cmdOpts.stdin, cmdOpts.stdout, cmdOpts.stderr ],
+      input: cmdOpts.input
     }
 
-    let debugCmd = this._debugCmd(opts.env, cmdArgs)
+    let debugCmd = this._debugCmd(opts, cmdArgs)
     debug(debugCmd)
 
     const cmd = cmdArgs.shift()

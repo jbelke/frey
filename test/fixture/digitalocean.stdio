@@ -14,10 +14,9 @@ ACCPTST:STDIO_REPLACE_ELAPSED
 --> {hostname} - prepare
 Reconstructing private key '{root}/test/scenario/digitalocean/frey-digitalocean.pem' from '{root}/test/scenario/digitalocean/frey-digitalocean.pem.cast5'
 -----BEGIN RSA PRIVATE KEY-----
-Found 'terraform' with version '0.6.15'
+Found 'terraform' with version '0.7.3'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
-Found 'pyhcl' with version '0.2.1'
 Found 'ansible' with version '2.0.2'
 --> {hostname} - refresh
 --> Saved state to '{root}/test/scenario/digitalocean/Frey-state-terraform.tfstate'
@@ -27,7 +26,7 @@ The Terraform execution plan has been generated and is shown below.
 Resources are shown in alphabetical order for quick scanning. Green resources
 will be created (or destroyed and then created if an existing resource
 exists), yellow resources are being changed in-place, and red resources
-will be destroyed.
+will be destroyed. Cyan entries are data sources to be read.
 
 Your plan was also saved to the path below. Call the "apply" subcommand
 with this plan file and Terraform will exactly execute this execution
@@ -36,39 +35,39 @@ plan.
 Path: {root}/test/scenario/digitalocean/Frey-residu-terraform.plan
 
 + digitalocean_domain.domain-web
-    ip_address: "" => "${element(digitalocean_droplet.freytest-web.*.ipv4_address, count.index)}"
-    name:       "" => "web-0.freyexample.com"
+    ip_address: "${element(digitalocean_droplet.freytest-web.*.ipv4_address, count.index)}"
+    name:       "web-0.freyexample.com"
 
 + digitalocean_droplet.freytest-db
-    image:                "" => "ubuntu-14-04-x64"
-    ipv4_address:         "" => "<computed>"
-    ipv4_address_private: "" => "<computed>"
-    ipv6_address:         "" => "<computed>"
-    ipv6_address_private: "" => "<computed>"
-    locked:               "" => "<computed>"
-    name:                 "" => "db-0"
-    region:               "" => "nyc2"
-    size:                 "" => "512mb"
-    ssh_keys.#:           "" => "<computed>"
-    status:               "" => "<computed>"
+    image:                "ubuntu-14-04-x64"
+    ipv4_address:         "<computed>"
+    ipv4_address_private: "<computed>"
+    ipv6_address:         "<computed>"
+    ipv6_address_private: "<computed>"
+    locked:               "<computed>"
+    name:                 "db-0"
+    region:               "nyc2"
+    size:                 "512mb"
+    ssh_keys.#:           "<computed>"
+    status:               "<computed>"
 
 + digitalocean_droplet.freytest-web
-    image:                "" => "ubuntu-14-04-x64"
-    ipv4_address:         "" => "<computed>"
-    ipv4_address_private: "" => "<computed>"
-    ipv6_address:         "" => "<computed>"
-    ipv6_address_private: "" => "<computed>"
-    locked:               "" => "<computed>"
-    name:                 "" => "web-0"
-    region:               "" => "nyc2"
-    size:                 "" => "512mb"
-    ssh_keys.#:           "" => "<computed>"
-    status:               "" => "<computed>"
+    image:                "ubuntu-14-04-x64"
+    ipv4_address:         "<computed>"
+    ipv4_address_private: "<computed>"
+    ipv6_address:         "<computed>"
+    ipv6_address_private: "<computed>"
+    locked:               "<computed>"
+    name:                 "web-0"
+    region:               "nyc2"
+    size:                 "512mb"
+    ssh_keys.#:           "<computed>"
+    status:               "<computed>"
 
 + digitalocean_ssh_key.freytest-sshkey
-    fingerprint: "" => "<computed>"
-    name:        "" => "Frey test"
-    public_key:  "" => "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyqYu9Afk0RMvxlDu3bVTNYOHeAX9zVCfuvdUE7osGXcOc8Ggn1kleaHXuHLwrfbsE0KZ6yUkRTh6JO3hhTSDeqw9RpNSGKt7YTLdfkM0LhybnPFed/efeGaKEQX0IMCVVL+su7fgT5ESWanR9ibrDqo0tHGWVLp6if7IBCIkmUiMrC6HbMUm3BclwAVlA3azS7Fk7y75urwlgVZbYkXcN30fwpA+PX61oj/UMN1eloabZiv+EeZhAJj1envrMKO6TAhVYL7Nw2qNYMYP5Hh5wRfSZqB5sLRvET9IXItQ5yUjyI7F2b8t5WmBBJMlv2wIYgKPlbqGpmfPBycz0cd09 {user}@digitalocean.freyproject.io\n"
+    fingerprint: "<computed>"
+    name:        "Frey test"
+    public_key:  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyqYu9Afk0RMvxlDu3bVTNYOHeAX9zVCfuvdUE7osGXcOc8Ggn1kleaHXuHLwrfbsE0KZ6yUkRTh6JO3hhTSDeqw9RpNSGKt7YTLdfkM0LhybnPFed/efeGaKEQX0IMCVVL+su7fgT5ESWanR9ibrDqo0tHGWVLp6if7IBCIkmUiMrC6HbMUm3BclwAVlA3azS7Fk7y75urwlgVZbYkXcN30fwpA+PX61oj/UMN1eloabZiv+EeZhAJj1envrMKO6TAhVYL7Nw2qNYMYP5Hh5wRfSZqB5sLRvET9IXItQ5yUjyI7F2b8t5WmBBJMlv2wIYgKPlbqGpmfPBycz0cd09 {user}@digitalocean.freyproject.io\n"
 Plan: 4 to add, 0 to change, 0 to destroy.
 --> Saved plan as '{root}/test/scenario/digitalocean/Frey-residu-terraform.plan'
 --> {hostname} - backup
@@ -126,8 +125,8 @@ State path: {root}/test/scenario/digitalocean/Frey-state-terraform.tfstate
 
 Outputs:
 
-  public_address   = {ip}
-  public_addresses = {ip}
+public_address = {ip}
+public_addresses = {ip}
 {ip}
 --> Saved new state to '{root}/test/scenario/digitalocean/Frey-state-terraform.tfstate'
 --> {hostname} - install

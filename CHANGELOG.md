@@ -5,7 +5,7 @@
 Unreleased and unplanned todos
 
 - [ ] Consider detecting the User's config dir, and storing tools there, vs having a `~/.frey`
-- [ ] Consider only source `*.frey.toml` files, or using imports, so that random `*.toml` like Rust's `Cargo.toml` isn't merged in.
+- [ ] Consider only source `*.frey.hcl` files, or using imports, so that random `*.hcl` isn't merged in.
 - [ ] Ditch yargs for mimimist, now that we can have autocomplete via liftoff already
 - [ ] Empty out and remove `Base` class?
 - [ ] Figure out local Pip installs so we can build on Travis `sudo: false` platform
@@ -15,10 +15,10 @@ Unreleased and unplanned todos
 - [ ] Mocha tests for `Shell`
 - [ ] Mocha tests for `Base`
 - [ ] Remote state in S3 feature
+- [ ] Find/Write a higher quality json->hcl converter
 - [ ] Use Terraform modules similar to Ansible roles: https://www.terraform.io/docs/modules/sources.html
 - [ ] Vagrant support
 - [ ] website: Console window like http://lebab.io/? Here's another: http://codepen.io/peiche/details/LNVYzJ/
-- [ ] Equal sign vertical alignment for `frey format`
 - [ ] website: pitch: "don't hide away infra in obscure documentation, repos, datacenters, support desks. Evolve it together with your app"
 - [ ] docs: since node is installed on Every Travis image, you can easily deploy go projects with frey http://stackoverflow.com/questions/31235146/how-to-run-node-js-and-ruby-tests-within-one-project-on-travis-ci
 - [ ] docs: env secrets on Travis are not exposed to PRs from other repos: https://docs.travis-ci.com/user/pull-requests
@@ -26,17 +26,24 @@ Unreleased and unplanned todos
 
 ## v0.3.21 (Unreleased)
 
+- [ ] Consider putting `provider` `output` `variable` `resource` at the root level, and removing intermediate `playbooks` level from `install`, `setup`, `backup`, `restore`, etc. This will simplify how the hcl looks, and (maybe) allow us to keep the hcl for terraform untouched, vs doing hcl->object->json (but what about injecting FREY vars..)
+- [ ] Make Frey less 'classy', allow introduction of globals such as `runtime`
 - [ ] allow Ansible and Terraform version override from config
 - [ ] Check for `git ignore Frey-residu-*`
+- [ ] Don't set default arguments for Apps so we can deprecate `SHELLARG_REMOVE`
 - [ ] Offer cast5 encryption and decryption for `env.sh` (then remove `rebuild-env.sh` script from dependents)
 - [ ] `Show` should use `terraformInventory` just like `Remote`, instead of `public_addresses`
 - [ ] Speed up prepare by writing hashses do disk and comparing (just like depmake does)
 - [ ] Symlink ansible if needed: `mkdir -p ~/.frey/tools/ansible/2.0.1.0/pip/bin/ && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible-playbook ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible-playbook`
 - [ ] Deal with pip returning version `1.1` in some cases (we error out on that currently with an unrecognized version)
+- [ ] Don't rely on `exceptions` in `squashArrays`, but have a more clever system to preserve arrays (a better json2hcl or adhering to arrayed config might also fix this already, ridding ourselves from squash)
 
 ## v0.3.20 (Unreleased)
 
-- [x] Deprecate dual pyhcl-0.1.15 usage now that we verified 0.2.1 solves all troubles
+- [x] Upgrade to Terraform 0.7.3
+- [-] Equal sign vertical alignment for `frey format`
+- [x] Switch from TOML to HCL
+- [x] Deprecate pyhcl alltogether in favor of json2hcl
 - [x] Upgrade babel
 - [x] Upgrade eslint and fix newly found linting issues
 

@@ -7,10 +7,9 @@
 Reconstructing private key '{root}/test/scenario/sshreconstruct/frey-sshreconstruct.pem' from '{root}/test/scenario/sshreconstruct/frey-sshreconstruct.pem.cast5'
 -----BEGIN RSA PRIVATE KEY-----
 Creating public key '{root}/test/scenario/sshreconstruct/frey-sshreconstruct.pub'
-Found 'terraform' with version '0.6.15'
+Found 'terraform' with version '0.7.3'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
-Found 'pyhcl' with version '0.2.1'
 Found 'ansible' with version '2.0.2'
 Done
 Cleaning up '{root}/test/scenario/sshreconstruct/frey-sshreconstruct.pem' after process exit with code '0' 

@@ -22,7 +22,7 @@ yargs
     projectDir: {
       nargs: 1,
       type: 'string',
-      describe: 'Directory that contains the Freyfile.toml. Frey will traverse upwards if empty. '
+      describe: 'Directory that contains the Freyfile.hcl. Frey will traverse upwards if empty. '
     },
     remote: {
       nargs: 1,
@@ -113,20 +113,20 @@ if (!_.find(commands, { 'name': argv._[0] })) {
 }
 
 // For Frey, LiftOff:
-//  - Scans for the closest Freyfile.toml
+//  - Scans for the closest Freyfile.hcl
 //  - Switches to local npm install if available
 const liftOff = new LiftOff({
   name: 'frey',
   configName: 'Freyfile',
   processTitle: 'frey',
-  extensions: {'.toml': null}
+  extensions: {'.hcl': null}
 })
 
 liftOff.launch({
   cwd: argv.projectDir
 }, (env) => {
   if (env.configBase === undefined && argv._[0] !== 'convert' && argv._[0] !== 'help' && argv._[0] !== 'docbuild') {
-    const msg = 'Could not find a Freyfile.toml in current directory or upwards, or in project directory.'
+    const msg = 'Could not find a Freyfile.hcl in current directory or upwards, or in project directory.'
     throw new Error(msg)
   }
 

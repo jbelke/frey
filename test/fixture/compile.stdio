@@ -4,23 +4,32 @@ ACCPTST:STDIO_SKIP_COMPARE
 --> {hostname} - init
 --> {hostname} - config
 Done
---> Freyfile.toml
-[global]
-  connection = "local"
+--> Freyfile.hcl
+"global" = {
+  "connection" = "local"
 
-[global.terraformcfg]
-  parallelism = 1
+  "terraformcfg" = {
+    "parallelism" = 1
+  }
 
-[infra.provider.aws]
-  access_key = "${var.FREY_AWS_ACCESS_KEY}"
-  region     = "us-east-1"
+  "ansiblecfg" "ssh_connection" {
+    "ssh_args" = "-o Hostname={{{config.global.connection}}}host -o ControlMaster=auto -o ControlPersist=60s"
+  }
+}
 
-[global.ansiblecfg.ssh_connection]
-  ssh_args = "-o Hostname={{{config.global.connection}}}host -o ControlMaster=auto -o ControlPersist=60s"
+"infra" "provider" "aws" {
+  "access_key" = "${var.FREY_AWS_ACCESS_KEY}"
 
-[[install.playbooks.tasks]]
-  name = "Execute arbitrary command"
-  command = "pwd"
+  "region" = "us-east-1"
+}
+
+"install" "playbooks" {
+  "tasks" = {
+    "name" = "Execute arbitrary command"
+
+    "command" = "pwd"
+  }
+}
 
 --> Frey-residu-ansible.cfg
 [ssh_connection]
@@ -43,8 +52,8 @@ ssh_args=-o Hostname=localhost -o ControlMaster=auto -o ControlPersist=60s
 }
 
 --> Frey-residu-install.yml
-tasks:
-  - name: Execute arbitrary command
-    command: pwd
+- tasks:
+    - command: pwd
+      name: Execute arbitrary command
 
 

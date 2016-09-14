@@ -17,7 +17,7 @@ describe('Utils', () => {
     })
     it('should crash hard by default', (done) => {
       expect(utils.render.bind(utils, 'Hi {{{crash}}}', {name: 'kevin'}))
-        .to.throw('Unable to render vars in \'"Hi {{{crash}}}"\'.')
+        .to.throw('Unable to render var(s): {{{crash}}}.')
       done()
     })
     it('should allow to prevent crashes', (done) => {

@@ -44,7 +44,7 @@ FREY_SHOULD_BE_AS_VAR_IN_TERRAFORM=now \
   --project-dir "." \
   --bail
 
-file=Freyfile.toml
+file=Freyfile.hcl
 echo "--> ${file}"
 cat "${file}"
 echo ""

@@ -9,10 +9,9 @@ ACCPTST:STDIO_REPLACE_ELAPSED
 Creating private key '{tmpdir}/frey-dynamodb.pem'
 Creating public key '{tmpdir}/frey-dynamodb.pub'
 Creating private encrypted key '{tmpdir}/frey-dynamodb.pem.cast5'
-Found 'terraform' with version '0.6.15'
+Found 'terraform' with version '0.7.3'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
-Found 'pyhcl' with version '0.2.1'
 Found 'ansible' with version '2.0.2'
 --> {hostname} - refresh
 --> Saved state to '{root}/test/scenario/dynamodb/Frey-state-terraform.tfstate'
@@ -22,7 +21,7 @@ The Terraform execution plan has been generated and is shown below.
 Resources are shown in alphabetical order for quick scanning. Green resources
 will be created (or destroyed and then created if an existing resource
 exists), yellow resources are being changed in-place, and red resources
-will be destroyed.
+will be destroyed. Cyan entries are data sources to be read.
 
 Your plan was also saved to the path below. Call the "apply" subcommand
 with this plan file and Terraform will exactly execute this execution
@@ -31,31 +30,31 @@ plan.
 Path: {root}/test/scenario/dynamodb/Frey-residu-terraform.plan
 
 + aws_dynamodb_table.basic-dynamodb-table
-    arn:                                                   "" => "<computed>"
-    attribute.#:                                           "" => "3"
-    attribute.301566416.name:                              "" => "TopScore"
-    attribute.301566416.type:                              "" => "N"
-    attribute.3178016421.name:                             "" => "GameTitle"
-    attribute.3178016421.type:                             "" => "S"
-    attribute.3403068082.name:                             "" => "UserId"
-    attribute.3403068082.type:                             "" => "N"
-    global_secondary_index.#:                              "" => "1"
-    global_secondary_index.505842399.hash_key:             "" => "GameTitle"
-    global_secondary_index.505842399.name:                 "" => "GameTitleIndex"
-    global_secondary_index.505842399.non_key_attributes.#: "" => "1"
-    global_secondary_index.505842399.non_key_attributes.0: "" => "UserId"
-    global_secondary_index.505842399.projection_type:      "" => "INCLUDE"
-    global_secondary_index.505842399.range_key:            "" => "TopScore"
-    global_secondary_index.505842399.read_capacity:        "" => "10"
-    global_secondary_index.505842399.write_capacity:       "" => "10"
-    hash_key:                                              "" => "UserId"
-    name:                                                  "" => "GameScores"
-    range_key:                                             "" => "GameTitle"
-    read_capacity:                                         "" => "20"
-    stream_arn:                                            "" => "<computed>"
-    stream_enabled:                                        "" => "<computed>"
-    stream_view_type:                                      "" => "<computed>"
-    write_capacity:                                        "" => "20"
+    arn:                                                   "<computed>"
+    attribute.#:                                           "3"
+    attribute.301566416.name:                              "TopScore"
+    attribute.301566416.type:                              "N"
+    attribute.3178016421.name:                             "GameTitle"
+    attribute.3178016421.type:                             "S"
+    attribute.3403068082.name:                             "UserId"
+    attribute.3403068082.type:                             "N"
+    global_secondary_index.#:                              "1"
+    global_secondary_index.505842399.hash_key:             "GameTitle"
+    global_secondary_index.505842399.name:                 "GameTitleIndex"
+    global_secondary_index.505842399.non_key_attributes.#: "1"
+    global_secondary_index.505842399.non_key_attributes.0: "UserId"
+    global_secondary_index.505842399.projection_type:      "INCLUDE"
+    global_secondary_index.505842399.range_key:            "TopScore"
+    global_secondary_index.505842399.read_capacity:        "10"
+    global_secondary_index.505842399.write_capacity:       "10"
+    hash_key:                                              "UserId"
+    name:                                                  "GameScores"
+    range_key:                                             "GameTitle"
+    read_capacity:                                         "20"
+    stream_arn:                                            "<computed>"
+    stream_enabled:                                        "<computed>"
+    stream_view_type:                                      "<computed>"
+    write_capacity:                                        "20"
 Plan: 1 to add, 0 to change, 0 to destroy.
 --> Saved plan as '{root}/test/scenario/dynamodb/Frey-residu-terraform.plan'
 --> {hostname} - backup
@@ -99,8 +98,8 @@ State path: {root}/test/scenario/dynamodb/Frey-state-terraform.tfstate
 
 Outputs:
 
-  arn      = arn:aws:dynamodb:us-east-1:501208355536:table/GameScores
-  endpoint = http://dynamodb.com:8080/endpoint/arn:aws:dynamodb:us-east-1:501208355536:table/GameScores
+arn = arn:aws:dynamodb:us-east-1:501208355536:table/GameScores
+endpoint = http://dynamodb.com:8080/endpoint/arn:aws:dynamodb:us-east-1:501208355536:table/GameScores
 --> Saved new state to '{root}/test/scenario/dynamodb/Frey-state-terraform.tfstate'
 --> {hostname} - install
 --> {hostname} - setup
