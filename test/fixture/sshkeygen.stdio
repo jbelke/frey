@@ -7,7 +7,7 @@
 Creating private key '{tmpdir}/frey-sshkeygen.pem'
 Creating public key '{tmpdir}/frey-sshkeygen.pub'
 Creating private encrypted key '{tmpdir}/frey-sshkeygen.pem.cast5'
-Found 'terraform' with version '0.7.3'
+Found 'terraform' with version '0.6.15'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
 Found 'ansible' with version '2.0.2'
@@ -22,7 +22,7 @@ Done
 --> {hostname} - deps
 --> {hostname} - prepare
 Creating public key '{tmpdir}/frey-sshkeygen.pub'
-Found 'terraform' with version '0.7.3'
+Found 'terraform' with version '0.6.15'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
 Found 'ansible' with version '2.0.2'

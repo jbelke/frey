@@ -40,7 +40,7 @@ Unreleased and unplanned todos
 ## v0.3.20 (2016-09-14)
 
 - [x] Write a higher quality json->hcl->json converter
-- [x] Upgrade to Terraform 0.7.3
+- [x] Upgrade to Terraform 0.6.15
 - [-] Equal sign vertical alignment for `frey format`
 - [x] Make HCL the primary format of Freyfiles (vs TOML)
 - [x] Deprecate pyhcl alltogether in favor of json2hcl
