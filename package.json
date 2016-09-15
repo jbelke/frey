@@ -34,6 +34,7 @@
     "web:watch": "nodemon --verbose --watch ./  --ignore 'website/*.md' --ignore 'website/_site/*' --ext html,json,md,js,css,png,jpg --exec 'npm-run-all web:inject web:build'"
   },
   "files": [
+    "bin",
     "roles",
     "lib"
   ],
