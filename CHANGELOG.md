@@ -37,7 +37,7 @@ Unreleased and unplanned todos
 - [ ] Symlink ansible if needed: `mkdir -p ~/.frey/tools/ansible/2.0.1.0/pip/bin/ && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible-playbook ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible-playbook`
 - [ ] Deal with pip returning version `1.1` in some cases (we error out on that currently with an unrecognized version)
 
-## v0.3.21 (Unreleased)
+## v0.3.21 (2016-09-15)
 
 - [x] Fix node install problem on Trusty with python 2.7.6: https://github.com/ansible/ansible/issues/9966#issuecomment-246373269 https://github.com/nodesource/distributions/issues/354
 - [x] Squash exceptions on non object arrays
