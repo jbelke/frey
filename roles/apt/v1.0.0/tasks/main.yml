@@ -9,6 +9,6 @@
   name: Common | Update APT
   when: apt_sources|changed
 
-- apt: pkg={{ item }} state=present
+- apt: name={{ item }} state=present
   name: Common | Install Packages
   with_items: "{{apt_packages}}"
