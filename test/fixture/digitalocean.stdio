@@ -14,7 +14,7 @@ ACCPTST:STDIO_REPLACE_ELAPSED
 --> {hostname} - prepare
 Reconstructing private key '{root}/test/scenario/digitalocean/frey-digitalocean.pem' from '{root}/test/scenario/digitalocean/frey-digitalocean.pem.cast5'
 -----BEGIN RSA PRIVATE KEY-----
-Found 'terraform' with version '0.6.15'
+Found 'terraform' with version '0.7.3'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
 Found 'ansible' with version '2.0.2'

@@ -9,7 +9,7 @@ ACCPTST:STDIO_REPLACE_ELAPSED
 Creating private key '{tmpdir}/frey-dynamodb.pem'
 Creating public key '{tmpdir}/frey-dynamodb.pub'
 Creating private encrypted key '{tmpdir}/frey-dynamodb.pem.cast5'
-Found 'terraform' with version '0.6.15'
+Found 'terraform' with version '0.7.3'
 Found 'terraformInventory' with version '0.6.0'
 Found 'pip' with version {{global_pip_version}}
 Found 'ansible' with version '2.0.2'

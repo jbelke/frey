@@ -52,7 +52,7 @@ Unreleased and unplanned todos
 
 ## v0.3.17 (2016-04-16)
 
-- [x] Upgrade to Terraform 0.6.15
+- [x] Upgrade to Terraform 0.7.3
 - [x] Make it easier to use Frey without Providers (just the install and setup phase, targeting hostnames you already know)
 - [x] Upgrade pyhcl to 0.2.1 (see https://github.com/virtuald/pyhcl/issues/7)
 
