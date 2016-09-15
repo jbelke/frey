@@ -37,7 +37,7 @@ Unreleased and unplanned todos
 - [ ] Symlink ansible if needed: `mkdir -p ~/.frey/tools/ansible/2.0.1.0/pip/bin/ && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible-playbook ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible-playbook`
 - [ ] Deal with pip returning version `1.1` in some cases (we error out on that currently with an unrecognized version)
 
-## v0.3.22 (Unreleased)
+## v0.3.22 (2016-09-15)
 
 - [x] Upgrade from Terraform 0.6.15 -> 0.7.3 again, because all our states cannot be downgraded
 - [x] Better exception handling
