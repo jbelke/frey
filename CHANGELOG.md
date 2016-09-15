@@ -24,7 +24,7 @@ Unreleased and unplanned todos
 - [ ] Add generic cleanup method that `.pem` as well as `Frey-residu-*` can be registered with, so it will all be deleted if `global.purge_residu` is turned on (default = `true`)
 - [ ] Don't rely on `exceptions` in `squashArrays`, but have a more clever system to preserve arrays (a better json2hcl or adhering to arrayed config might also fix this already, ridding ourselves from squash)
 
-## v0.3.23 (Unreleased)
+## v0.3.24 (Unreleased)
 
 - [ ] Consider putting `provider` `output` `variable` `resource` at the root level, and removing intermediate `playbooks` level from `install`, `setup`, `backup`, `restore`, etc. This will simplify how the hcl looks, and (maybe) allow us to keep the hcl for terraform untouched, vs doing hcl->object->json (but what about injecting FREY vars..)
 - [ ] Make Frey less 'classy', utilizing more pure functions, and allow the introduction of globals such as `runtime`
@@ -36,6 +36,10 @@ Unreleased and unplanned todos
 - [ ] Speed up prepare by writing hashses do disk and comparing (just like depmake does)
 - [ ] Symlink ansible if needed: `mkdir -p ~/.frey/tools/ansible/2.0.1.0/pip/bin/ && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible-playbook ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible-playbook`
 - [ ] Deal with pip returning version `1.1` in some cases (we error out on that currently with an unrecognized version)
+
+## v0.3.23 (2016-09-15)
+
+- [x] Ship `bin` inside the npm as well
 
 ## v0.3.22 (2016-09-15)
 
