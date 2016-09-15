@@ -1,8 +1,11 @@
 ---
 - name: Add Nodesource apt key.
-  apt_key:
-    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-    state: present
+  # apt_key:
+  #   url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+  #   state: present
+  #   validate_certs: False
+  # problem on trusty with python 2.7.6: https://github.com/ansible/ansible/issues/9966#issuecomment-246373269 https://github.com/nodesource/distributions/issues/354
+  shell: curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 
 - name: Add NodeSource repositories for Node.js.
   apt_repository:

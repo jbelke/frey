@@ -8,15 +8,17 @@ const squashArrays = (i, exceptions, depth) => {
   const input = _.cloneDeep(i)
   if (!exceptions) {
     exceptions = [
+      'handlers',
+      'munin_alerts',
+      'munin_hosts',
+      'munin_node_plugins',
+      'nodejs_npm_global_packages',
       'playbooks',
       'roles',
-      'networks',
-      'munin_hosts',
-      'munin_alerts',
-      'munin_node_plugins',
-      'rsyslog_rsyslog_d_files',
-      'nodejs_npm_global_packages',
-      'tags'
+      'rules',
+      'tags',
+      'tasks',
+      'znc_users'
     ]
   }
   if (!depth) {

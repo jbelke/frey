@@ -39,6 +39,7 @@ Unreleased and unplanned todos
 
 ## v0.3.21 (Unreleased)
 
+- [x] Fix node install problem on Trusty with python 2.7.6: https://github.com/ansible/ansible/issues/9966#issuecomment-246373269 https://github.com/nodesource/distributions/issues/354
 - [x] Squash exceptions on non object arrays
 - [x] Downgrade from Terraform 0.7.3 -> 0.6.15 as the first throws EOL errors (test with `statuspage` repo and you'll see)
 - [x] Less verbosity in debug mode
