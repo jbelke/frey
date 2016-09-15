@@ -39,6 +39,7 @@ Unreleased and unplanned todos
 
 ## v0.3.22 (Unreleased)
 
+- [x] Better exception handling
 - [x] More control over squashArray exceptions by using full paths
 
 ## v0.3.21 (2016-09-15)

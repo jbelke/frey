@@ -8,19 +8,27 @@ const squashArrays = (i, exceptions, path) => {
   const input = _.cloneDeep(i)
   if (!exceptions) {
     exceptions = [
-      '*.playbooks.*',
       '*.playbooks.*.handlers',
+      '*.playbooks.*.post_tasks',
+      '*.playbooks.*.pre_tasks',
+      '*.playbooks.*.roles.*.ansistrano_shared_paths',
       '*.playbooks.*.roles.*.apt_packages',
       '*.playbooks.*.roles.*.munin_alerts',
       '*.playbooks.*.roles.*.munin_hosts',
       '*.playbooks.*.roles.*.munin_node_plugins',
       '*.playbooks.*.roles.*.nodejs_npm_global_packages',
+      '*.playbooks.*.roles.*.rsyslog_rsyslog_d_files.*.directives',
       '*.playbooks.*.roles.*.rsyslog_rsyslog_d_files.*.rules',
       '*.playbooks.*.roles.*.znc_users',
       '*.playbooks.*.roles',
       '*.playbooks.*.tasks',
+      '*.playbooks.*',
       '*.playbooks',
-      '**.tags'
+      '**.tags',
+      'infra.*.resource.aws_instance.*.security_groups',
+      'infra.*.resource.aws_route53_record.*.records',
+      'infra.*.resource.aws_security_group.*.egress.*.cidr_blocks',
+      'infra.*.resource.aws_security_group.*.ingress.*.cidr_blocks'
     ]
   }
   if (!path) {
@@ -58,7 +66,7 @@ const squashArrays = (i, exceptions, path) => {
       let curPathString = path.concat(key).join('.')
 
       if (_.isArray(val)) {
-        // debug(`question: key=${key} with val=${val} at path=${curPathString}`)
+        // debug(`${curPathString}`)
         if (val.length === 1 && _.isPlainObject(val[0]) && !isException(curPathString)) {
           // debug(`squashed key=${key} with val=${val} at path=${curPathString}`)
           input[key] = val[0]
