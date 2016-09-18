@@ -9,6 +9,7 @@
 - holms.fqdn -- Copyright (c) 2014 Roman Gorodeckij
 - jdauphant.nginx -- Copyright 1994-2004 Benno Joy. All rights reserved.
 - jnv.unattended-upgrades -- Gnomovision version 69, Copyright (C) year name of author
+- ktosiek.nix -- Copyright (c) 2016, Tomasz Kontusz
 - telusdigital.logrotate -- Copyright (c) 2015 Aaron Pederson
 - telusdigital.upstart -- Copyright (c) 2015 Chris Olstrom
 - tersmitten.rsyslog -- Copyright (c) Oefenweb.nl <https://github.com/Oefenweb>
