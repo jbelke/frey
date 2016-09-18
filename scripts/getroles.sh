@@ -27,39 +27,44 @@ __root="$(dirname "${__dir}")"
 
 # https://galaxy.ansible.com/geerlingguy/mysql/
 
+# "<freyRole>,<freyVersion>;<ansiRole>,<ansiVersion>"
 roles=(
-  "deploy;carlosbuenosvinos.ansistrano-deploy,1.3.0;v1.3.0"
-  "deploy;carlosbuenosvinos.ansistrano-deploy,1.4.0;v1.4.0"
-  "rollback;carlosbuenosvinos.ansistrano-rollback,1.2.0;v1.2.0"
-  "nodejs;geerlingguy.nodejs,2.1.1;v2.1.1"
-  "redis;geerlingguy.redis,1.2.0;v1.2.0"
-  "unattended-upgrades;jnv.unattended-upgrades,v1.2.0;v1.2.0"
-  "munin;geerlingguy.munin,1.1.2;v1.1.2"
-  "munin-node;geerlingguy.munin-node,1.2.0;v1.2.0"
-  "upstart;telusdigital.upstart;v1.0.0"
-  "logrotate;telusdigital.logrotate;v1.0.0"
-  "rsyslog;tersmitten.rsyslog,v3.0.1;v3.0.1"
-  "fqdn;holms.fqdn;v1.0.0"
-  "znc;triplepoint.znc,1.0.4;v1.0.4"
-  "nginx;jdauphant.nginx,v2.0.1;v2.0.1"
-  "prometheus;williamyeh.prometheus,1.3.6;v1.3.6"
-  "smokeping;akamine.smokeping;v0.0.1"
-  "jenkins;geerlingguy.jenkins,1.3.0;v1.3.0"
+  "deploy,v1.3.0;carlosbuenosvinos.ansistrano-deploy,1.3.0"
+  "deploy,v1.4.0;carlosbuenosvinos.ansistrano-deploy,1.4.0"
+  "rollback,v1.2.0;carlosbuenosvinos.ansistrano-rollback,1.2.0"
+  "nodejs,v2.1.1;geerlingguy.nodejs,2.1.1"
+  "redis,v1.2.0;geerlingguy.redis,1.2.0"
+  "unattended-upgrades,v1.2.0;jnv.unattended-upgrades,v1.2.0"
+  "munin,v1.1.2;geerlingguy.munin,1.1.2"
+  "munin-node,v1.2.0;geerlingguy.munin-node,1.2.0"
+  "upstart,v1.0.0;telusdigital.upstart"
+  "logrotate,v1.0.0;telusdigital.logrotate"
+  "rsyslog,v3.0.1;tersmitten.rsyslog,v3.0.1"
+  "fqdn,v1.0.0;holms.fqdn"
+  "znc,v1.0.4;triplepoint.znc,1.0.4"
+  "nginx,v2.0.1;jdauphant.nginx,v2.0.1"
+  "prometheus,v1.3.6;williamyeh.prometheus,1.3.6"
+  "smokeping,v0.0.1;akamine.smokeping"
+  "jenkins,v1.3.0;geerlingguy.jenkins,1.3.0"
+  "nix,v1.0.1;ktosiek.nix,v1.0.1"
 )
 
 for role in "${roles[@]}"; do
-  freyRole="$(echo "${role}" |awk -F";" '{print $1}')"
+  freyRoleAndVersion="$(echo "${role}" |awk -F";" '{print $1}')"
+  freyRole="$(echo "${freyRoleAndVersion}" |awk -F"," '{print $1}')"
+  freyVersion="$(echo "${freyRoleAndVersion}" |awk -F"," '{print $2}')"
+
   ansiRoleAndVersion="$(echo "${role}" |awk -F";" '{print $2}')"
   ansiRole="$(echo "${ansiRoleAndVersion}" |awk -F"," '{print $1}')"
   ansiVersion="$(echo "${ansiRoleAndVersion}" |awk -F"," '{print $2}')"
-  freyVersion="$(echo "${role}" |awk -F";" '{print $3}')"
 
   if [ ! -f "${__root}/roles/${freyRole}/${freyVersion}/README.md" ]; then
     ansible-galaxy install \
-    --force \
-    --roles-path "${__root}/roles/${freyRole}/${freyVersion}" \
+      --force \
+      --roles-path "${__root}/roles/${freyRole}/${freyVersion}" \
     ${ansiRoleAndVersion}
     shopt -s dotglob nullglob # to also glob over hidden files
+    set -x
     mv "${__root}/roles/${freyRole}/${freyVersion}/${ansiRole}/"* "${__root}/roles/${freyRole}/${freyVersion}/"
     rmdir "${__root}/roles/${freyRole}/${freyVersion}/${ansiRole}/"
   fi

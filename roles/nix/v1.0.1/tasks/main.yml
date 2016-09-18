@@ -1,0 +1,67 @@
+- name: Download Nix
+  get_url:
+    url: '{{ nix_package_url }}'
+    dest: /root/{{ nix_package_name }}
+
+- name: Install Nix
+  apt:
+    deb: /root/{{ nix_package_name }}
+
+- name: Prepare build users group
+  group:
+    name: nixbld
+    system: yes
+
+- name: Prepare Nix users group
+  group:
+    name: nix-users
+    system: yes
+
+- name: Create the profiles directory
+  file:
+    path: /nix/var/nix/profiles
+    state: directory
+    group: nix-users
+    mode: 'g=rwX'
+
+- name: Add users to the Nix users group
+  user:
+    name: '{{ item }}'
+    append: yes
+    groups: nix-users
+  with_items: nix_users
+
+- name: Prepare build users
+  user:
+    name: nixbld{{ item }}
+    comment: Nix build user {{ item }}
+    group: nixbld
+    groups: nixbld
+    home: /var/empty
+    createhome: no
+  with_sequence: start=1 count=10
+
+- name: Set permission on Nix daemon socket dir
+  file:
+    path: /nix/var/nix/daemon-socket
+    state: directory
+    group: nix-users
+    mode: g=rX,o=
+
+- name: Run the Nix daemon
+  service:
+    name: nix-daemon
+    state: started
+    enabled: yes
+
+- name: Create profile.d script
+  template:
+    src: etc/profile.d/nix-remote.sh
+    dest: /etc/profile.d/nix-remote.sh
+
+- name: Fix the nix.sh script
+  lineinfile:
+    dest: /etc/profile.d/nix.sh
+    regexp: '^( *_NIX_DEF_LINK)='
+    line: \1=/nix/var/nix/profiles/per-user/${USER}/profile
+    backrefs: yes
