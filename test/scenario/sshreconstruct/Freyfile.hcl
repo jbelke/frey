@@ -1,3 +1,4 @@
-"global" "ssh" {
-  "key_dir" = "."
+global ssh {
+  key_dir = "."
 }
+

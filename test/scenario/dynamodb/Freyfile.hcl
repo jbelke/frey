@@ -1,3 +1,4 @@
-"global" "terraformcfg" {
-  "parallelism" = 1
+global terraformcfg {
+  parallelism = 1
 }
+

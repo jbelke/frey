@@ -1,4 +1,4 @@
-"infra" resource aws_dynamodb_table "basic-dynamodb-table" {
+infra resource aws_dynamodb_table "basic-dynamodb-table" {
   hash_key       = "UserId"
   name           = "GameScores"
   range_key      = "GameTitle"
