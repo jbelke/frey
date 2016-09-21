@@ -7,7 +7,7 @@ import constants from '../constants'
 class Plan extends Command {
   main (cargo, cb) {
     if (!_.has(this.runtime.config, 'infra')) {
-      this._out(`Skipping as there are no install instructions\n`)
+      this._out(`Skipping as there are no infra instructions\n`)
       return cb(null)
     }
 

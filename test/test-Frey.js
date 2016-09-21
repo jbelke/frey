@@ -36,6 +36,7 @@ describe('Frey', () => {
           'config',
           'deps',
           'prepare',
+          'get',
           'plan',
           'infra'
         ])
@@ -134,7 +135,7 @@ describe('Frey', () => {
         expect(err).to.equal(null)
         expect(filteredChain).to.deep.equal([
           'init', 'config', 'deps',
-          'prepare', 'refresh', 'validate', 'plan', 'backup', 'infra',
+          'prepare', 'refresh', 'validate', 'get', 'plan', 'backup', 'infra',
           'install', 'setup', 'deploy', 'restart', 'show'
         ])
         done()
@@ -179,6 +180,7 @@ describe('Frey', () => {
           'prepare',
           'refresh',
           'validate',
+          'get',
           'plan'
         ])
         done()

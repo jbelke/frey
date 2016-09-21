@@ -4,6 +4,7 @@ module.exports = [
   { chained: true, name: 'prepare', description: 'Installs dependencies like Terraform' },
   { chained: true, name: 'refresh', description: 'Refreshes current infra state and saves to terraform.tfstate' },
   { chained: true, name: 'validate', description: 'Checks your projects' },
+  { chained: true, name: 'get', description: 'Get infra modules' },
   { chained: true, name: 'plan', description: 'Shows infra changes and saves in an executable plan' },
   { chained: true, name: 'backup', description: 'Backs up server state' },
   { chained: true, name: 'infra', description: 'Launches virtual machines at a provider' },

@@ -39,12 +39,12 @@ Unreleased and unplanned todos
 
 ## v0.3.25 (Unreleased)
 
-- [ ] Before `plan`, do a `terraform get`
-- [ ] Transpile terraform files one-on-one, so we can also use Frey capable modules(?)
 - [ ] Transpile `facts {` to an `provisioner "remote-exec"` block writing ini file into `/etc/ansible/facts.d/frey.fact`
 - [ ] When `backup` is ran by hand, the chain should not be triggered. Yet when running a chain, `backup` should be part of it
 - [ ] Add support for a `alienInventory` executable, that can cough up hostnames of existing infra
 - [ ] When launching `frey` and we have no `FREY_` env keys, and we do `globSync` of `env*.sh` in the `cwd()` or `projectDir`, offer a list of which one to source automatically. Then inject these into the process.env(?)
+- [-] Transpile terraform files one-on-one, so we can also use Frey capable modules(?) <-- No. Modules are possible but remain `tf` files. Reason: there's no sane way to spread ansible playbooks accross those.
+- [x] Before `plan`, do a `terraform get`
 - [x] Reformat scenario example Freyfiles 
 
 ## v0.3.24 (2016-09-18)

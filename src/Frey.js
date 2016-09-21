@@ -61,6 +61,10 @@ class Frey extends Base {
     if (filteredChain.indexOf('plan') < 0 && filteredChain.indexOf('infra') > -1) {
       filteredChain.unshift('plan')
     }
+    // Always get modules
+    if (filteredChain.indexOf('get') < 0 && filteredChain.indexOf('infra') > -1) {
+      filteredChain.unshift('get')
+    }
 
     if (filteredChain.indexOf('prepare') < 0 && (startAt < 0 || startAt > _.findIndex(chain, {name: 'prepare'}))) {
       if (cmd !== 'convert') {
