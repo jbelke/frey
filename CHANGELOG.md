@@ -24,7 +24,7 @@ Unreleased and unplanned todos
 - [ ] Add generic cleanup method that `.pem` as well as `Frey-residu-*` can be registered with, so it will all be deleted if `global.purge_residu` is turned on (default = `true`)
 - [ ] Don't rely on `exceptions` in `squashArrays`, but have a more clever system to preserve arrays (a better json2hcl or adhering to arrayed config might also fix this already, ridding ourselves from squash)
 
-## v0.3.26 (Unreleased)
+## v0.3.x (Unreleased)
 
 - [ ] Consider putting `provider` `output` `variable` `resource` at the root level, and removing intermediate `playbooks` level from `install`, `setup`, `backup`, `restore`, etc. This will simplify how the hcl looks, and (maybe) allow us to keep the hcl for terraform untouched, vs doing hcl->object->json (but what about injecting FREY vars..)
 - [ ] Make Frey less 'classy', utilizing more pure functions, and allow the introduction of globals such as `runtime`
@@ -37,12 +37,15 @@ Unreleased and unplanned todos
 - [ ] Symlink ansible if needed: `mkdir -p ~/.frey/tools/ansible/2.0.1.0/pip/bin/ && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible && ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible-playbook ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible-playbook`
 - [ ] Deal with pip returning version `1.1` in some cases (we error out on that currently with an unrecognized version)
 
-## v0.3.25 (Unreleased)
+## v0.3.26 (Unreleased)
 
 - [ ] Transpile `facts {` to an `provisioner "remote-exec"` block writing ini file into `/etc/ansible/facts.d/frey.fact`
 - [ ] When `backup` is ran by hand, the chain should not be triggered. Yet when running a chain, `backup` should be part of it
 - [ ] Add support for a `alienInventory` executable, that can cough up hostnames of existing infra
 - [ ] When launching `frey` and we have no `FREY_` env keys, and we do `globSync` of `env*.sh` in the `cwd()` or `projectDir`, offer a list of which one to source automatically. Then inject these into the process.env(?)
+
+## v0.3.25 (2016-09-21)
+
 - [x] Make `remote` less noisy
 - [-] Transpile terraform files one-on-one, so we can also use Frey capable modules(?) <-- No. Modules are possible but remain `tf` files. Reason: there's no sane way to spread ansible playbooks accross those.
 - [x] Before `plan`, do a `terraform get`
