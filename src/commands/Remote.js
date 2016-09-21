@@ -40,14 +40,11 @@ class Remote extends Command {
       const filteredHosts = {}
 
       _.forOwn(hosts, (ips, name) => {
-        if (name.indexOf('.') === -1) {
-          return
-        }
-        if (name.indexOf('_') !== -1) {
+        if (name.indexOf('name_') === -1) {
           return
         }
         ips.forEach((ip) => {
-          filteredHosts[ip] = name
+          filteredHosts[ip] = name.replace('name_', '')
         })
       })
 
