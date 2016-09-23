@@ -1,0 +1,71 @@
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.IconBox {
+  float: left;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  border: 2px solid #F3F6FA;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 5px;
+  flex: 1;
+}
+
+ul {
+  margin-left: -25px;
+}
+
+.fa {
+  font-size: 50px;
+  color: #3EA3D8;
+  padding-bottom: 15px;
+}
+
+.TerminalBox {
+  margin-top: 50px;
+}
+
+.FeatureText {
+  line-height: 25px;
+  margin-top: 100px;
+  background-color: #FFFFFF;
+  border: 1px solid #F3F6FA;
+  padding: 20px;
+}
+  
+.img-fluid {
+  max-width: 100%;
+  height: auto;  
+}
+
+.DesignGoalsSection {
+  background-color: #3EA3D8;
+  color: #FFFFFF;
+}
+
+.CallToActionSection {
+  background-color: #ED582E;
+}
+
+  .btn.btn-round {
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+  .btn.btn-round:hover {
+    background-color: #ED582D;
+  }
+  
+.footer {
+  background-color: #000B0F;
+  color: #FFFFFF;
+}

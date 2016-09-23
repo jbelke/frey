@@ -58,7 +58,7 @@ body.inverse .card .form-control {
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
-  line-height: 1.5em;
+  line-height: 2.3em;
 }
 
 a, a:hover, a:focus {
@@ -2124,7 +2124,7 @@ legend {
   line-height: 1.42857;
 }
 .navbar, .navbar.navbar-default {
-  background-color: #9c27b0;
+  background-color: #000B0F;
   color: #ffffff;
 }
 .navbar .navbar-form .form-group input.form-control::-moz-placeholder,
@@ -2591,11 +2591,12 @@ legend {
 
 h1, .h1 {
   font-size: 3.8em;
-  line-height: 1.15em;
+  line-height: 1.25em;
 }
 
 h2, .h2 {
   font-size: 2.6em;
+  line-height: 1.25em;
 }
 
 h3, .h3 {
@@ -3134,7 +3135,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .section {
-  padding: 70px 0;
+  padding: 50px 0;
 }
 
 .section-navbars {
@@ -3635,7 +3636,7 @@ h2.title {
 }
 
 .index-page .wrapper > .header {
-  height: 90vh;
+  height: 100vh;
 }
 .index-page .brand {
   margin-top: 30vh;
@@ -3643,8 +3644,8 @@ h2.title {
   text-align: center;
 }
 .index-page .brand h1 {
-  font-size: 4.8em;
-  font-weight: 600;
+  font-size: 3.6em;
+  font-weight: 400;
 }
 .index-page .brand h3 {
   font-size: 1.5em;

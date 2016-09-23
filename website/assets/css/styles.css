@@ -1,0 +1,142 @@
+  /*==========  Mobile First Method  ==========*/
+
+  /* Custom, iPhone Retina */ 
+  @media only screen and (max-width : 400px) {
+    .header-logo-1 {
+      margin-top: 15px;
+      margin-left: 10px;
+      max-width: 40%;
+    }
+    
+    .header-logo-2 {
+      margin-top: -15px;
+      max-width: 60%;
+    }
+    
+    .brand {
+      font-size: 8px;
+    }
+    
+    .header-logo-3 {
+      margin-top: 10px;
+      max-width: 45%;
+    }
+    
+    .IconBox {
+      margin-right: 30px;
+      padding: 5px;
+    }
+  }
+
+  /* Extra Small Devices, Phones */ 
+  @media only screen and (min-width : 480px) {
+    .header-logo-1 {
+      margin-top: 15px;
+      margin-left: 10px;
+      max-width: 28%;
+    }
+    
+    .header-logo-2 {
+      margin-top: -15px;
+      max-width: 30%;
+    }
+    
+    .brand {
+      font-size: 10px;
+    }
+    
+    .header-logo-3 {
+      margin-top: 20px;
+      max-width: 10%;
+    }
+    
+    .IconBox {
+      margin-right: 30px;
+      padding: 5px;
+    }
+    
+  }
+
+  /* Small Devices, Tablets */
+  @media only screen and (min-width : 768px) {
+    .header-logo-1 {
+      max-width: 15%;
+    }
+    
+    .header-logo-2 {
+      margin-top: -15px;
+      max-width: 30%;
+    }
+    
+    .header-logo-3 {
+      margin-top: 20px;
+      max-width: 55%;
+    }
+    
+    .IconBox {
+      margin-right: 10px;
+      width: 160px;
+      height: 240px;
+    }
+    
+    .copyright {
+      font-size: 10px;
+      margin-left: -50px;
+    }
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px) {
+    .header-logo-1 {
+      margin-top: 15px;
+      max-width: 40%;
+    }
+    
+    .header-logo-2 {
+      margin-top: -15px;
+      max-width: 60%;
+    }
+    
+    .header-logo-3 {
+      margin-top: 20px;
+      max-width: 35%;
+    }
+    
+    .IconBox {
+      margin-right: 10px;
+      padding: 5px;
+      float: left;
+      width: 200px;
+      height: 220px;
+    }
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width : 1200px) {
+    .header-logo-1 {
+      margin-top: 15px;
+      max-width: 30%;
+    }
+    
+    .header-logo-2 {
+      margin-top: -15px;
+      max-width: 50%;
+    }
+    
+    .header-logo-3 {
+      margin-top: 15px;
+      max-width: 50%;
+    }
+    
+    .IconBox {
+      width: 200px;
+      height: 200px;
+      margin-right: 20px;
+      padding: 10px;
+    }
+    
+    .copyright {
+      font-size: 13px;
+      margin-left: -70px;
+    }
+  }
