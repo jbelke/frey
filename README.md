@@ -223,6 +223,22 @@ npm install --save --exact frey
 
 A fixed version of Frey, installs fixed local versions of its dependencies (such as Ansible and Terraform) in local directories as well, all to keep chances of conflict slim, and chances of things working five years from now, optimal. More on this later.
 
+## Develop
+
+If you're developing Frey itself, you'll probably want to clone Frey, so you can make changes to the source directly, and see how that impacts things.
+
+It's worth noting that Frey is written in ES6, and will likely have to be transpiled down to javascript that your `node` understands. For this, `babel-node` exists, which does this in 'realtime'. 
+
+```bash
+npm install --global babel-cli
+```
+
+For convenience, let's create an alias locally, so that when you type `lfrey` (local Frey), the Frey source files are used directly. We'll also turn on debugging in this mode:
+
+```bash
+alias lfrey="env DEBUG=frey:* babel-node ~/code/frey/src/cli.js"
+```
+
 ## Design goals
 
 - Frey should be ridiculously convenient, and hence offer auto-installation of requirements for instance
