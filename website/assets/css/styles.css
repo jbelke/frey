@@ -2,56 +2,65 @@
 
   /* Custom, iPhone Retina */ 
   @media only screen and (max-width : 400px) {
-    .header-logo-1 {
-      margin-top: 15px;
-      margin-left: 10px;
+    .header-logo {
+      margin-top: -15px;
       max-width: 40%;
     }
     
-    .header-logo-2 {
-      margin-top: -15px;
-      max-width: 60%;
+    .wrapper > .header{
+        min-height: 30px;
     }
     
     .brand {
       font-size: 8px;
     }
     
-    .header-logo-3 {
-      margin-top: 10px;
-      max-width: 45%;
+    .IconBox {
+      width: 250px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 25px 20px 25px;
+      margin: 0 0 0 25px;
     }
     
-    .IconBox {
-      margin-right: 30px;
-      padding: 5px;
+    h2 {
+      text-align: center;
+    }
+    
+    
+    .homepage-terminal-example {
+      padding: 7px;
+    }
+    
+    .m-b-md {
+      font-size: 11px;
+      line-height: 16px;
     }
   }
 
   /* Extra Small Devices, Phones */ 
   @media only screen and (min-width : 480px) {
-    .header-logo-1 {
-      margin-top: 15px;
-      margin-left: 10px;
-      max-width: 28%;
-    }
-    
-    .header-logo-2 {
+    .header-logo {
       margin-top: -15px;
       max-width: 30%;
+    }
+    
+    .wrapper > .header{
+        min-height: 30px;
     }
     
     .brand {
       font-size: 10px;
     }
     
-    .header-logo-3 {
-      margin-top: 20px;
-      max-width: 10%;
+    .BulletList--withHeader {
+      text-align: center;
     }
     
     .IconBox {
-      margin-right: 30px;
+      margin: 0 0 25px 0;
       padding: 5px;
     }
     
@@ -59,18 +68,13 @@
 
   /* Small Devices, Tablets */
   @media only screen and (min-width : 768px) {
-    .header-logo-1 {
-      max-width: 15%;
-    }
-    
-    .header-logo-2 {
+    .header-logo {
       margin-top: -15px;
       max-width: 30%;
     }
     
-    .header-logo-3 {
-      margin-top: 20px;
-      max-width: 55%;
+    .wrapper > .header{
+        min-height: 30px;
     }
     
     .IconBox {
@@ -80,26 +84,21 @@
     }
     
     .copyright {
-      font-size: 10px;
-      margin-left: -50px;
+      font-size: 13px;
+      margin-left: -40px;
+      margin-top: -5px;
     }
   }
 
   /* Medium Devices, Desktops */
   @media only screen and (min-width : 992px) {
-    .header-logo-1 {
-      margin-top: 15px;
-      max-width: 40%;
-    }
-    
-    .header-logo-2 {
-      margin-top: -15px;
-      max-width: 60%;
-    }
-    
-    .header-logo-3 {
-      margin-top: 20px;
+    .header-logo {
+      margin-top: -45px;
       max-width: 35%;
+    }
+    
+    .wrapper > .header{
+        min-height: 30px;
     }
     
     .IconBox {
@@ -107,25 +106,24 @@
       padding: 5px;
       float: left;
       width: 200px;
-      height: 220px;
+      height: 200px;
     }
+    
+    .BulletList--withHeader {
+      margin-top: 130px;
+    }
+    
   }
 
   /* Large Devices, Wide Screens */
   @media only screen and (min-width : 1200px) {
-    .header-logo-1 {
-      margin-top: 15px;
-      max-width: 30%;
-    }
-    
-    .header-logo-2 {
+    .header-logo {
       margin-top: -15px;
-      max-width: 50%;
+      max-width: 15%;
     }
-    
-    .header-logo-3 {
-      margin-top: 15px;
-      max-width: 50%;
+
+    .BulletList--withHeader {
+      margin-top: 130px;
     }
     
     .IconBox {
@@ -136,7 +134,7 @@
     }
     
     .copyright {
-      font-size: 13px;
+      font-size: 14px;
       margin-left: -70px;
     }
   }

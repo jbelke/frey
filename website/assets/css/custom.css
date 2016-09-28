@@ -1,26 +1,33 @@
-
+.navbar-brand-logo .logo {
+  float: left;
+  overflow: hidden;
+  width: 60px;
+}
 .navbar {
   margin-bottom: 0;
 }
 
+.header{
+  height: 30px;
+}
+
+.brand h1 {
+  margin-top: -80px;
+}
+
 .IconBox {
-  float: left;
   width: 200px;
   height: 200px;
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   line-height: 25px;
-  border: 2px solid #F3F6FA;
+  border: 1px solid #ffffff;
   margin-top: 20px;
   margin-right: 10px;
   padding: 5px;
-  flex: 1;
-}
-
-ul {
-  margin-left: -25px;
 }
 
 .fa {
@@ -29,21 +36,52 @@ ul {
   padding-bottom: 15px;
 }
 
+.section-light-blue {
+  background-color: #506367;
+}
+
+.section {
+  padding: 30px 0;
+  position: relative;
+  background-color: #f4f3ef;
+}
+
+.homepage-terminal-example {
+  font-family: monospace;
+  background: #272b38;
+  color: #48d8a0;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.m-b-md {
+  font-size: 10px;
+  line-height: 15px;
+}
+
+p {
+  text-align: left;
+}
+
 .TerminalBox {
   margin-top: 50px;
 }
 
 .FeatureText {
   line-height: 25px;
-  margin-top: 100px;
+  margin-bottom: 30px;
   background-color: #FFFFFF;
   border: 1px solid #F3F6FA;
   padding: 20px;
 }
   
-.img-fluid {
-  max-width: 100%;
+/*.img-fluid {
+  width: 100%;
   height: auto;  
+}*/
+
+.homepage-terminal-example {
+  margin-bottom: 25px;
 }
 
 .DesignGoalsSection {
@@ -55,17 +93,21 @@ ul {
   background-color: #ED582E;
 }
 
-  .btn.btn-round {
-    background-color: transparent;
-    border: 1px solid #FFFFFF;
-    color: #FFFFFF;
+.btn.btn-round {
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
 }
 
-  .btn.btn-round:hover {
-    background-color: #ED582D;
-  }
+.btn.btn-round:hover {
+  background-color: #ED582D;
+}
   
 .footer {
   background-color: #000B0F;
   color: #FFFFFF;
+}
+
+.footer ul li a:hover {
+  color: #DDDDDD;
 }

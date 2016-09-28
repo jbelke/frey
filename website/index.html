@@ -8,6 +8,7 @@ title: Frey
 		<div class="section">
 				<div class="container">
 						<div class="row">
+							<div class="col-md-12">
 								<div class="col-md-6">
 									<div class="BulletList--withHeader">
 										<h2><span style="font-family: 'Exo 2', sans-serif;">With one Freyfile</span></h2>
@@ -36,69 +37,155 @@ title: Frey
 											<p><strong>Easily override</strong> - Any configuration stored in the Freyfile can be overridden at runtime via command-line arguments</p>
 										</div>
 								</div>
+						</div>	
 				</div>
 		</div>
-		<div class="section FeaturesSection" style="background-color: #EFF2F5;">
+	
 				<div class="container text-center">
 						<div class="row">
 								<div class="col-md-12">
 										<h1><span style="font-family: 'Exo 2', sans-serif;">Features</span></h1>
 										<!-- First Feature -->
-										
+										<div class="section FeaturesSection">
 										 <div class="FeatureBox">
-											 <div class="col-sm-6">
+											 <div class="col-md-2">
+ 											</div>
+ 											<div class="col-md-4">
 												<div class="FeatureText">
 													<strong>Plan & Launch Infrastructure</strong> - Based on Terraform, Frey let's you plan infra, and asks for confirmation if it detects destructive changes.
 												</div>
 					             </div>	
-										   <div class="col-sm-6">	
-												<div class="TerminalBox">
-													<img src="assets/img/FirstFeature.jpg" class="img-fluid">
-												</div>
-										  </div>
-                    </div>
+										   <div class="col-md-6">	
+												 <div class="homepage-terminal-example">
+												 	<p class="m-b-md">
+														kvs at mbp in ~/code/uppy-server/infra on frey*
+														<br>
+														<span class="text-muted">$ frey--help
+														<br>
+														Usage: frey <command> [options]
+														<br><br>
+														Commands:</br>
+															completion&nbsp;&nbsp;&nbsp;&nbsp;install CLI auto completion</br>
+															config</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">loads, merges, renders, writes configuration</br>
+															prepare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">installs dependencies like Terraform</br>
+															refresh</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">refreshes current infra stats and saves to terraform.tfstate</br>
+															completion</span>&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">install CLI auto completion</br>
+															config</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">loads, merges, renders, writes configuration</br>
+															prepare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">installs dependencies like Terraform</br>
+															refresh</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">refreshes current infra stats and saves to terraform.tfstate</br>
+															completion</span>&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">install CLI auto completion</br>
+															config</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">loads, merges, renders, writes configuration</br>
+															prepare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">installs dependencies like Terraform</br>
+															refresh</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">refreshes current infra stats and saves to terraform.tfstate</br>
+															docbuild&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build docs</br>
+															restore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore latest state backup</br>
+															destroy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Destroy all that is in state</br>
+															remote&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Execute a remote command-or opens console
+													</span>
+												  </p>
+										    </div>
+                      </div>
+										</div>
 										<!-- Second Feature -->
 									 		
 										<div class="FeatureBox">
-											<div class="col-sm-6">
+											<div class="col-md-2">
+											</div>
+											<div class="col-md-4">
 												<div class="FeatureText">
 													<strong>Provision software packages,</strong> such as Nginx and Redis. Frey comes bundled with roles so you only have to specify versions and vhosts.
 												</div>
 											</div>	
-											<div class="col-sm-6">		
-												<div class="TerminalBox">
-													<img src="assets/img/SecondFeature.jpg" class="img-fluid">
-												</div>
-										</div>
+											<div class="col-md-6">	
+												<div class="homepage-terminal-example">
+												 <p class="m-b-md">
+													 kvs at mbp in ~/code/uppy-server/infra on frey*
+													 <br>
+													 <span class="text-muted">$ frey--help
+													 <br>
+													 Usage: frey <command> [options]
+													 <br><br>
+													 Commands:</br>
+														 completion &nbsp;&nbsp;install CLI auto completion</br>
+														 config</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">loads, merges, renders, writes configuration</br>
+														 prepare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">installs dependencies like Terraform</br>
+														 refresh</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">refreshes current infra stats and saves to terraform.tfstate</br>
+														 completion</span>&nbsp;&nbsp;&nbsp;V<span class="text-muted">install CLI auto completion</br>
+														 config</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">loads, merges, renders, writes configuration</br>
+														 prepare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">installs dependencies like Terraform</br>
+														 refresh</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">refreshes current infra stats and saves to terraform.tfstate</br>
+														 docbuild&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build docs</br>
+														 restore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore latest state backup</br>
+												 </span>
+												 </p>
+											 </div>
+										 </div>
 									 </div>	
 
 										<!-- Third Feature -->
 									<div class="FeatureBox">
-											<div class="col-sm-6">	
+										<div class="col-md-2">
+										</div>
+											<div class="col-md-4">	
 												<div class="FeatureText">
 													<strong>Connect to your app with ease</strong> - Frey handles SSH keys for you.
 												</div>
 											</div>
 									 
-										  <div class="col-sm-6"> 
-												<div class="TerminalBox">
-													<img src="assets/img/ThirdFeature.jpg" class="img-fluid">
-												</div>
-										  </div>
+											<div class="col-md-6">	
+												<div class="homepage-terminal-example">
+												 <p class="m-b-md">
+													 kvs at mbp in ~/code/uppy-server/infra on frey*
+													 <br>
+													 <span class="text-muted">$ frey--help
+													 <br>
+													 Usage: frey <command> [options]
+													 <br><br>
+													 Commands:</br>
+														 completion &nbsp;&nbsp;install CLI auto completion</br>
+														 config</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">loads, merges, renders, writes configuration</br>
+														 prepare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">installs dependencies like Terraform</br>
+														 refresh</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">refreshes current infra stats and saves to terraform.tfstate</br>
+														 completion</span>&nbsp;&nbsp;&nbsp;V<span class="text-muted">install CLI auto completion</br>
+														 config</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">loads, merges, renders, writes configuration</br>
+														 prepare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">installs dependencies like Terraform</br>
+														 refresh</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">refreshes current infra stats and saves to terraform.tfstate</br>
+														 docbuild&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build docs</br>
+														 restore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore latest state backup</br>
+												 </span>
+												 </p>
+											 </div>
+										 </div>
                    </div> 
 										<!-- Fourth Feature -->
 										
 									   <div class="FeatureBox">
-											<div class="col-sm-6">
+											 <div class="col-md-2">
+											 </div>
+											<div class="col-md-4">
 												<div class="FeatureText">
 													<strong>Encrypt using a secret only you know</strong> - Frey can store ssh keys in Git. CI like travis can decrypt these, so you can have it deploy your app whenever there are changes
 												</div>	
 									    </div>
-											<div class="col-sm-6">
-											 <div class="TerminalBox">
-												<img src="assets/img/FourthFeature.jpg" class="img-fluid">
+											<div class="col-md-6">	
+												<div class="homepage-terminal-example">
+												 <p class="m-b-md">
+													 kvs at mbp in ~/code/uppy-server/infra on frey*
+													 <br>
+													 <span class="text-muted">$ frey--help
+													 <br>
+													 Usage: frey <command> [options]
+													 <br><br>
+													 Commands:</br>
+														 completion &nbsp;&nbsp;install CLI auto completion</br>
+														 config</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">loads, merges, renders, writes configuration</br>
+														 prepare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V<span class="text-muted">installs dependencies like Terraform</br>
+														 docbuild&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build docs</br>
+														 restore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore latest state backup</br>
+												 </span>
+												 </p>
 											 </div>
-										</div>
+										 </div>
 									</div>
 						</div>
 				</div>
@@ -132,19 +219,19 @@ title: Frey
 							</div>
 						</div>
 						<div class="col-md-3">
-							<div class="IconBox borderless">
+							<div class="IconBox">
 								<i class="fa fa-desktop" aria-hidden="true"></i>
 								Make redis a requirement for your app
 							</div>
 						</div>
 						<div class="col-md-3">
-							<div class="IconBox borderless">
+							<div class="IconBox">
 								<i class="fa fa-reply" aria-hidden="true"></i>
 								Make Node.js a requirement for your app
 							</div>
 						</div>
 						<div class="col-md-3">
-							<div class="IconBox borderless">
+							<div class="IconBox">
 								<i class="fa fa-spinner" aria-hidden="true"></i>
 								Use rsync as deployment strategy
 							</div>
