@@ -27,6 +27,8 @@ __root="$(dirname "${__dir}")"
 
 # https://galaxy.ansible.com/geerlingguy/mysql/
 
+# DISCLAMER FREY VERIONS != ANSIBLE GALAXY VERSION EVEN THOUGH IT APPEARS THAST WAY
+
 # "<freyRole>,<freyVersion>;<ansiRole>,<ansiVersion>"
 roles=(
   "deploy,v1.3.0;carlosbuenosvinos.ansistrano-deploy,1.3.0"
