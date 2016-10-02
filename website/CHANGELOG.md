@@ -50,6 +50,10 @@ Unreleased and unplanned todos
 - [ ] When `backup` is ran by hand, the chain should not be triggered. Yet when running a chain, `backup` should be part of it
 - [ ] Add support for a `alienInventory` executable, that can cough up hostnames of existing infra
 - [ ] When launching `frey` and we have no `FREY_` env keys, and we do `globSync` of `env*.sh` in the `cwd()` or `projectDir`, offer a list of which one to source automatically. Then inject these into the process.env(?)
+- [ ] Frey should show debug output based on `-v` or `-vv` or `-vvv`. Because it's a tool, and not a library, we should ditch the `DEBUG` env var
+- [ ] Upon `may i destroy infra?` question, Frey should show all the resource IDs that are getting destroyed
+- [ ] `get` should be daisychained before `refresh`, not `plan`
+- [ ] Possible bug: We should likely not squashArray ansible actions such as `restart`, or actions in multiple files in the same dir are merged into one
 
 ## v0.3.25 (2016-09-21)
 

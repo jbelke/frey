@@ -48,7 +48,7 @@
 
 .homepage-terminal-example {
   font-family: monospace;
-  background: #272b38;
+  background: #000B0F;
   color: #48d8a0;
   border-radius: 8px;
   padding: 30px;
@@ -57,6 +57,18 @@
 .m-b-md {
   font-size: 10px;
   line-height: 15px;
+}
+
+.highlighted-red {
+  color: #F8585A;
+}
+
+.highlighted-orange {
+  color: #FF8901;
+}
+
+.highlighted-pink {
+  color: #E009ED;
 }
 
 p {
@@ -69,7 +81,7 @@ p {
 
 .FeatureText {
   line-height: 25px;
-  margin-bottom: 30px;
+  margin: 60px 0 30px 0;
   background-color: #FFFFFF;
   border: 1px solid #F3F6FA;
   padding: 20px;
