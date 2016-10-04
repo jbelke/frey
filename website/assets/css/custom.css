@@ -7,8 +7,15 @@
   margin-bottom: 0;
 }
 
-.header{
+.header {
   height: 30px;
+}
+
+.banner-narrow {
+  height: 120px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 50% 95%; 
 }
 
 .brand h1 {

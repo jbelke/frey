@@ -1,0 +1,23 @@
+
+.main {
+  background-color: #EFF2F5;
+}
+
+.col-md-8 {
+  margin-top: 40px;
+  padding-left: 40px;
+}
+
+.col-md-4 {
+  margin-top: 40px;
+}
+
+h3 {
+  margin-top: 30px;
+  color: #003151;
+}
+
+p {
+  margin-top: 40px;
+  color: #A2A2A2;
+}

@@ -4,7 +4,7 @@
 <body class="index-page">
   {% include navigation.html %}
 <div class="wrapper">
-    <div class="header" style="background-image: url('assets/img/rocketbg1.jpg');">
+    <div class="banner-narrow" style="background-image: url('{{site.baseurl}}/assets/img/narrow-banner.jpg');">
         <a href="#">
           <svg class="header-logo" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 460 180" xml:space="preserve">
             <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="63.1961" y1="101.2023" x2="138.5399" y2="101.2023">
@@ -41,16 +41,7 @@
         L297.819,115.704z" />
           </svg>
         </a>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-              <div class="brand">
-                <h1><span style="font-family: 'Exo 2', sans-serif;">Frey</span> {{site.subtitle}}</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div>    
     {{content}}
 
    {% include footer.html %}
