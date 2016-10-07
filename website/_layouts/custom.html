@@ -3,30 +3,28 @@
 {% include head.html %}
 <body class="index-page">
   {% include navigation.html %}
-<div class="wrapper">
+  <div class="wrapper">
     <div class="banner-narrow" style="background-image: url('{{site.baseurl}}/assets/img/narrow-banner.jpg');">
-        <a href="#">
+      <a href="#">
         {% include header_logo.html %}
-        </a>
-      </div>    
-    {{content}}
-
-   {% include footer.html %}
+      </a>
+    </div>
+    {{content}} {% include footer.html %}
   </div>
 </body>
 <!--   Core JS Files   -->
-<script src="{{ "{{ site.url }}/assets/js/jquery.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "{{ site.url }}/assets/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "{{site.url }}/assets/js/material.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ " {{ site.baseurl }}/assets/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " {{ site.baseurl }}/assets/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " {{site.baseurl }}/assets/js/material.min.js " | prepend: site.baseurl }}"></script>
 
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="{{ "{{site.url }}/assets/js/nouislider.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ " {{site.baseurl }}/assets/js/nouislider.min.js " | prepend: site.baseurl }}"></script>
 
 <!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-<script src="{{ "{{site.url }}/assets/js/bootstrap-datepicker.js" | prepend: site.baseurl }}"></script>
+<script src="{{ " {{site.baseurl }}/assets/js/bootstrap-datepicker.js " | prepend: site.baseurl }}"></script>
 
 <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
-<script src="{{ "{{site.url }}/assets/js/material-kit.js" | prepend: site.baseurl }}"></script>
+<script src="{{ " {{site.baseurl }}/assets/js/material-kit.js " | prepend: site.baseurl }}"></script>
 
 <script type="text/javascript">
   $().ready(function() {

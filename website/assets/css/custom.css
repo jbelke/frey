@@ -6,22 +6,15 @@
 .navbar {
   margin-bottom: 0;
 }
-
-.header {
-  height: 30px;
-}
-
 .banner-narrow {
   height: 120px;
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 95%; 
+  background-position: 50% 95%;
 }
-
 .brand h1 {
   margin-top: -80px;
 }
-
 .IconBox {
   width: 200px;
   height: 200px;
@@ -36,23 +29,16 @@
   margin-right: 10px;
   padding: 5px;
 }
-
 .fa {
   font-size: 50px;
   color: #3EA3D8;
   padding-bottom: 15px;
 }
-
-.section-light-blue {
-  background-color: #506367;
-}
-
 .section {
   padding: 30px 0;
   position: relative;
   background-color: #f4f3ef;
 }
-
 .homepage-terminal-example {
   font-family: monospace;
   background: #000B0F;
@@ -60,32 +46,25 @@
   border-radius: 8px;
   padding: 30px;
 }
-
 .m-b-md {
   font-size: 10px;
   line-height: 15px;
 }
-
 .highlighted-red {
   color: #F8585A;
 }
-
 .highlighted-orange {
   color: #FF8901;
 }
-
 .highlighted-pink {
   color: #E009ED;
 }
-
 p {
   text-align: left;
 }
-
 .TerminalBox {
   margin-top: 50px;
 }
-
 .FeatureText {
   line-height: 25px;
   margin: 60px 0 30px 0;
@@ -93,7 +72,7 @@ p {
   border: 1px solid #F3F6FA;
   padding: 20px;
 }
-  
+
 /*.img-fluid {
   width: 100%;
   height: auto;  
@@ -102,31 +81,25 @@ p {
 .homepage-terminal-example {
   margin-bottom: 25px;
 }
-
 .DesignGoalsSection {
   background-color: #3EA3D8;
   color: #FFFFFF;
 }
-
 .CallToActionSection {
   background-color: #ED582E;
 }
-
 .btn.btn-round {
   background-color: transparent;
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
 }
-
 .btn.btn-round:hover {
   background-color: #ED582D;
 }
-  
 .footer {
   background-color: #000B0F;
   color: #FFFFFF;
 }
-
 .footer ul li a:hover {
   color: #DDDDDD;
 }
