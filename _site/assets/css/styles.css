@@ -1,0 +1,118 @@
+  /*==========  Mobile First Method  ==========*/
+  /* Custom, iPhone Retina */
+  
+  @media only screen and (max-width: 400px) {
+    .header-logo {
+      margin-top: -15px;
+      max-width: 40%;
+    }
+    .wrapper>.header {
+      min-height: 30px;
+    }
+    .brand {
+      font-size: 8px;
+    }
+    .IconBox {
+      width: 250px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 25px 20px 25px;
+      margin: 0 0 0 25px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .homepage-terminal-example {
+      padding: 7px;
+    }
+    .m-b-md {
+      font-size: 11px;
+      line-height: 16px;
+    }
+  }
+  /* Extra Small Devices, Phones */
+  
+  @media only screen and (min-width: 480px) {
+    .header-logo {
+      margin-top: -15px;
+      max-width: 30%;
+    }
+    .wrapper>.header {
+      min-height: 30px;
+    }
+    .brand {
+      font-size: 10px;
+    }
+    .BulletList--withHeader {
+      text-align: center;
+    }
+    .IconBox {
+      margin: 0 0 25px 0;
+      padding: 5px;
+    }
+  }
+  /* Small Devices, Tablets */
+  
+  @media only screen and (min-width: 768px) {
+    .header-logo {
+      margin-top: -15px;
+      max-width: 30%;
+    }
+    .wrapper>.header {
+      min-height: 30px;
+    }
+    .IconBox {
+      margin-right: 10px;
+      width: 160px;
+      height: 240px;
+    }
+    .copyright {
+      font-size: 13px;
+      margin-left: -40px;
+      margin-top: -5px;
+    }
+  }
+  /* Medium Devices, Desktops */
+  
+  @media only screen and (min-width: 992px) {
+    .header-logo {
+      margin-top: -45px;
+      max-width: 35%;
+    }
+    .wrapper>.header {
+      min-height: 30px;
+    }
+    .IconBox {
+      margin-right: 10px;
+      padding: 5px;
+      float: left;
+      width: 200px;
+      height: 200px;
+    }
+    .BulletList--withHeader {
+      margin-top: 130px;
+    }
+  }
+  /* Large Devices, Wide Screens */
+  
+  @media only screen and (min-width: 1200px) {
+    .header-logo {
+      margin-top: -15px;
+      max-width: 20%;
+    }
+    .BulletList--withHeader {
+      margin-top: 130px;
+    }
+    .IconBox {
+      width: 200px;
+      height: 200px;
+      margin-right: 20px;
+      padding: 10px;
+    }
+    .copyright {
+      font-size: 14px;
+      margin-left: -70px;
+    }
+  }

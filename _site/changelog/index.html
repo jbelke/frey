@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>Changelog | BASH3 Boilerplate – Template for writing better Bash scripts</title>
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+  <!-- CSS Files -->
+   <link rel="stylesheet" href="/assets/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="/assets/css/custom.css" />
+  <link rel="stylesheet" href="/assets/css/material-kit.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  
+
+
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link rel="stylesheet" href "/assets/css/demo.css"  />
+
+</head>
+<body class="index-page">
+  <!-- Navbar -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class ="navbar-brand navbar-brand-logo" href="http://freyproject.io/">
+        <div class="logo">
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" class="img-fluid" viewBox="0 0 260 81.19">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: #fff;
+              }
+            </style>
+          </defs>
+          <title>Frey-White</title>
+          <path class="cls-1" d="M132.7,109.45H75.45A19.61,19.61,0,0,1,94.81,92.94h34.83C137.47,92.94,142,103.56,132.7,109.45Z" transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M116.32,133.93H71.53l2.64-16.51h40.78c7.3,0,11.73,9.23,4.78,15.24A5.21,5.21,0,0,1,116.32,133.93Z" transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M82.47,157.54a2.87,2.87,0,0,1-2,.87H67.61L70.2,141.9h7.38C84.5,141.9,89.43,150.41,82.47,157.54Z" transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M159.4,158.41,166,116.48c2.16-13.54,11.48-14.07,21.55-14.07,4.19,0,11.77.29,15.29.43l-1.63,10.28H185.67c-5.39,0-6.47,1.2-7.31,6.4l-.84,5.25h20.9l-1.65,10.5H175.84l-3.64,23.13Z" transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M211.1,158.41H199.19L204,127.73c.48-3,1-5.51,1.7-8.39,5.18-2.95,12.06-4.2,17.91-4.2a33.61,33.61,0,0,1,4.55.26l-2.52,9.9a26.06,26.06,0,0,0-2.83-.17,16.55,16.55,0,0,0-6.4,1.2c-.46,1.73-.84,3.81-1.15,5.73Z" transform="translate(-67.61 -92.94)"
+          />
+          <path class="cls-1" d="M249.35,115.14c12.18,0,15.82,5.13,15.82,13.71a51.38,51.38,0,0,1-.7,7.69c-.19,1.2-.43,2.47-.74,3.69a181.17,181.17,0,0,1-19.32,2.13l-6.45.36a10.61,10.61,0,0,0-.07,1.17c0,4.05,2.54,5.15,7.62,5.15a120.69,120.69,0,0,0,15.32-1.15l-.46,9.35A107.76,107.76,0,0,1,241.53,159c-11.48,0-15.25-6-15.25-14.89a47,47,0,0,1,.62-7C229.35,121.57,235.23,115.14,249.35,115.14ZM244.86,134c2.4-.12,6-.43,8-.7.12-.41.24-1,.31-1.39a14.62,14.62,0,0,0,.19-2.18c0-3.28-1.58-5-5.56-5-6.5,0-8,4.05-8.87,9.61Z"
+            transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M297.8,115.72h12.27l-28.72,58.42h-12.3l9.68-18.84-10.5-39.58H281l5.61,24Z" transform="translate(-67.61 -92.94)" />
+        </svg>
+        </div>
+      </a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="navigation-index">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="">
+                        Getting Started
+                    </a>
+        </li>
+        <li>
+          <a href="/docs/">
+                        Docs
+                    </a>
+        </li>
+        <li>
+          <a href="http://github.com/kvz/frey" target="_blank">
+                        Github
+                    </a>
+        </li>
+        <li>
+          <a href="#">
+                        FAQ
+                    </a>
+        </li>
+        <li>
+          <a href="#">
+                        Contact Us
+                    </a>
+        </li>
+
+      </ul>
+
+
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- End Navbar -->
+<div class="wrapper">
+    <div class="header" style="background-image: url('assets/img/rocketbg1.jpg');">
+        <a href="#">
+          <svg class="header-logo" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 460 180" xml:space="preserve">
+  <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="63.1961" y1="101.2023" x2="138.5399" y2="101.2023">
+    <stop offset="0" style="stop-color:#3EA1DA" />
+    <stop offset="1" style="stop-color:#003150" />
+  </linearGradient>
+  <path fill="url(#SVGID_1_)" d="M132.939,109.445l-57.172,0v0c1.522-9.498,9.717-16.484,19.336-16.484h34.78
+C137.702,92.96,142.237,103.566,132.939,109.445z" />
+  <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="61.4468" y1="125.6499" x2="123.7981" y2="125.6499">
+    <stop offset="0" style="stop-color:#3EA1DA" />
+    <stop offset="1" style="stop-color:#003150" />
+  </linearGradient>
+  <path fill="url(#SVGID_2_)" d="M116.584,133.892H71.85l2.641-16.484h40.721c7.288,0,11.718,9.213,4.769,15.22
+C119.038,133.442,117.83,133.892,116.584,133.892z" />
+  <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="64.2637" y1="150.0975" x2="86.2544" y2="150.0975">
+    <stop offset="0" style="stop-color:#3EA1DA" />
+    <stop offset="1" style="stop-color:#003150" />
+  </linearGradient>
+  <path fill="url(#SVGID_3_)" d="M82.777,157.467c-0.537,0.55-1.272,0.873-2.041,0.873H67.933l2.588-16.484h7.372
+C84.802,141.855,89.725,150.354,82.777,157.467z" />
+  <g>
+    <path fill="#3EA1DA" d="M159.602,158.34l6.631-41.87c2.155-13.526,11.467-14.052,21.522-14.052c4.189,0,11.754,0.287,15.273,0.431
+l-1.628,10.27h-15.561c-5.386,0-6.463,1.197-7.302,6.392l-0.838,5.242h20.875l-1.652,10.486h-20.899l-3.639,23.101H159.602z" />
+    <path fill="#3EA1DA" d="M211.233,158.34h-11.898l4.836-30.642c0.479-2.993,1.006-5.506,1.699-8.379
+c5.172-2.944,12.042-4.189,17.883-4.189c1.652,0,3.16,0.072,4.549,0.263l-2.514,9.887c-0.813-0.096-1.891-0.168-2.824-0.168
+c-2.179,0-4.787,0.431-6.392,1.197c-0.454,1.723-0.838,3.806-1.149,5.721L211.233,158.34z" />
+    <path fill="#3EA1DA" d="M249.427,115.13c12.161,0,15.8,5.123,15.8,13.693c0,2.323-0.263,4.884-0.694,7.684
+c-0.191,1.197-0.431,2.466-0.742,3.687c-4.86,0.909-13.526,1.819-19.295,2.13l-6.44,0.359c-0.048,0.431-0.072,0.814-0.072,1.173
+c0,4.046,2.538,5.147,7.613,5.147c5.698,0,10.94-0.598,15.298-1.149l-0.455,9.337c-4.404,0.742-10.628,1.723-18.815,1.723
+c-11.467,0-15.226-5.961-15.226-14.866c0-2.178,0.239-4.549,0.622-7.038C229.462,121.545,235.327,115.13,249.427,115.13z
+M244.951,133.946c2.393-0.119,5.961-0.431,8.019-0.694c0.12-0.407,0.239-0.982,0.311-1.389c0.12-0.79,0.191-1.508,0.191-2.178
+c0-3.28-1.58-5.027-5.554-5.027c-6.487,0-7.972,4.046-8.857,9.6L244.951,133.946z" />
+    <path fill="#3EA1DA" d="M297.819,115.704h12.257l-28.679,58.34h-12.281l9.672-18.816l-10.485-39.524h12.784l5.602,23.963
+L297.819,115.704z" />
+</svg>
+        </a>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="brand">
+                <h1><span style="font-family: 'Exo 2', sans-serif;">Frey</span> is an end-to-end sysadmin toolbelt for developers</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <h1 id="changelog">Changelog</h1>
+
+<h2 id="ideabox">Ideabox</h2>
+
+<p>Unreleased and unplanned todos</p>
+
+<ul>
+  <li>[ ] Consider detecting the User’s config dir, and storing tools there, vs having a <code class="highlighter-rouge">~/.frey</code></li>
+  <li>[ ] Consider only source <code class="highlighter-rouge">*.frey.hcl</code> files, or using imports, so that random <code class="highlighter-rouge">*.hcl</code> isn’t merged in.</li>
+  <li>[ ] Ditch yargs for mimimist, now that we can have autocomplete via liftoff already</li>
+  <li>[ ] Empty out and remove <code class="highlighter-rouge">Base</code> class?</li>
+  <li>[ ] Figure out local Pip installs so we can build on Travis <code class="highlighter-rouge">sudo: false</code> platform</li>
+  <li>[ ] Implement <code class="highlighter-rouge">commit</code>: Safely commit state automatically</li>
+  <li>[ ] Indent stdout/err</li>
+  <li>[ ] Mocha tests for <code class="highlighter-rouge">App</code></li>
+  <li>[ ] Mocha tests for <code class="highlighter-rouge">Shell</code></li>
+  <li>[ ] Mocha tests for <code class="highlighter-rouge">Base</code></li>
+  <li>[ ] Remote state in S3 feature</li>
+  <li>[ ] Use Terraform modules similar to Ansible roles: https://www.terraform.io/docs/modules/sources.html</li>
+  <li>[ ] Vagrant support</li>
+  <li>[ ] website: Console window like http://lebab.io/? Here’s another: http://codepen.io/peiche/details/LNVYzJ/</li>
+  <li>[ ] website: pitch: “don’t hide away infra in obscure documentation, repos, datacenters, support desks. Evolve it together with your app”</li>
+  <li>[ ] docs: since node is installed on Every Travis image, you can easily deploy go projects with frey http://stackoverflow.com/questions/31235146/how-to-run-node-js-and-ruby-tests-within-one-project-on-travis-ci</li>
+  <li>[ ] docs: env secrets on Travis are not exposed to PRs from other repos: https://docs.travis-ci.com/user/pull-requests</li>
+  <li>[ ] Add generic cleanup method that <code class="highlighter-rouge">.pem</code> as well as <code class="highlighter-rouge">Frey-residu-*</code> can be registered with, so it will all be deleted if <code class="highlighter-rouge">global.purge_residu</code> is turned on (default = <code class="highlighter-rouge">true</code>)</li>
+  <li>[ ] Don’t rely on <code class="highlighter-rouge">exceptions</code> in <code class="highlighter-rouge">squashArrays</code>, but have a more clever system to preserve arrays (a better json2hcl or adhering to arrayed config might also fix this already, ridding ourselves from squash)</li>
+</ul>
+
+<h2 id="v03x-unreleased">v0.3.x (Unreleased)</h2>
+
+<ul>
+  <li>[ ] Consider putting <code class="highlighter-rouge">provider</code> <code class="highlighter-rouge">output</code> <code class="highlighter-rouge">variable</code> <code class="highlighter-rouge">resource</code> at the root level, and removing intermediate <code class="highlighter-rouge">playbooks</code> level from <code class="highlighter-rouge">install</code>, <code class="highlighter-rouge">setup</code>, <code class="highlighter-rouge">backup</code>, <code class="highlighter-rouge">restore</code>, etc. This will simplify how the hcl looks, and (maybe) allow us to keep the hcl for terraform untouched, vs doing hcl-&gt;object-&gt;json (but what about injecting FREY vars..)</li>
+  <li>[ ] Make Frey less ‘classy’, utilizing more pure functions, and allow the introduction of globals such as <code class="highlighter-rouge">runtime</code></li>
+  <li>[ ] allow Ansible and Terraform version override from config</li>
+  <li>[ ] Check for <code class="highlighter-rouge">git ignore Frey-residu-*</code></li>
+  <li>[ ] Don’t set default arguments for Apps so we can deprecate <code class="highlighter-rouge">SHELLARG_REMOVE</code></li>
+  <li>[ ] Offer cast5 encryption and decryption for <code class="highlighter-rouge">env.sh</code> (then remove <code class="highlighter-rouge">rebuild-env.sh</code> script from dependents)</li>
+  <li>[ ] <code class="highlighter-rouge">Show</code> should use <code class="highlighter-rouge">terraformInventory</code> just like <code class="highlighter-rouge">Remote</code>, instead of <code class="highlighter-rouge">public_addresses</code></li>
+  <li>[ ] Speed up prepare by writing hashses do disk and comparing (just like depmake does)</li>
+  <li>[ ] Symlink ansible if needed: <code class="highlighter-rouge">mkdir -p ~/.frey/tools/ansible/2.0.1.0/pip/bin/ &amp;&amp; ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible &amp;&amp; ln -nfs ~/.frey/tools/ansible/2.0.1.0/usr/local/share/python/ansible-playbook ~/.frey/tools/ansible/2.0.1.0/pip/bin/ansible-playbook</code></li>
+  <li>[ ] Deal with pip returning version <code class="highlighter-rouge">1.1</code> in some cases (we error out on that currently with an unrecognized version)</li>
+</ul>
+
+<h2 id="v0326-unreleased">v0.3.26 (Unreleased)</h2>
+
+<ul>
+  <li>[ ] Transpile <code class="highlighter-rouge">facts {</code> to an <code class="highlighter-rouge">provisioner "remote-exec"</code> block writing ini file into <code class="highlighter-rouge">/etc/ansible/facts.d/frey.fact</code></li>
+  <li>[ ] When <code class="highlighter-rouge">backup</code> is ran by hand, the chain should not be triggered. Yet when running a chain, <code class="highlighter-rouge">backup</code> should be part of it</li>
+  <li>[ ] Add support for a <code class="highlighter-rouge">alienInventory</code> executable, that can cough up hostnames of existing infra</li>
+  <li>[ ] When launching <code class="highlighter-rouge">frey</code> and we have no <code class="highlighter-rouge">FREY_</code> env keys, and we do <code class="highlighter-rouge">globSync</code> of <code class="highlighter-rouge">env*.sh</code> in the <code class="highlighter-rouge">cwd()</code> or <code class="highlighter-rouge">projectDir</code>, offer a list of which one to source automatically. Then inject these into the process.env(?)</li>
+  <li>[ ] Frey should show debug output based on <code class="highlighter-rouge">-v</code> or <code class="highlighter-rouge">-vv</code> or <code class="highlighter-rouge">-vvv</code>. Because it’s a tool, and not a library, we should ditch the <code class="highlighter-rouge">DEBUG</code> env var</li>
+  <li>[ ] Upon <code class="highlighter-rouge">may i destroy infra?</code> question, Frey should show all the resource IDs that are getting destroyed</li>
+  <li>[ ] <code class="highlighter-rouge">get</code> should be daisychained before <code class="highlighter-rouge">refresh</code>, not <code class="highlighter-rouge">plan</code></li>
+  <li>[ ] Possible bug: We should likely not squashArray ansible actions such as <code class="highlighter-rouge">restart</code>, or actions in multiple files in the same dir are merged into one</li>
+</ul>
+
+<h2 id="v0325-2016-09-21">v0.3.25 (2016-09-21)</h2>
+
+<ul>
+  <li>[x] Make <code class="highlighter-rouge">remote</code> less noisy</li>
+  <li>[-] Transpile terraform files one-on-one, so we can also use Frey capable modules(?) &lt;– No. Modules are possible but remain <code class="highlighter-rouge">tf</code> files. Reason: there’s no sane way to spread ansible playbooks accross those.</li>
+  <li>[x] Before <code class="highlighter-rouge">plan</code>, do a <code class="highlighter-rouge">terraform get</code></li>
+  <li>[x] Reformat scenario example Freyfiles</li>
+</ul>
+
+<h2 id="v0324-2016-09-18">v0.3.24 (2016-09-18)</h2>
+
+<ul>
+  <li>[x] Add nix role</li>
+</ul>
+
+<h2 id="v0323-2016-09-15">v0.3.23 (2016-09-15)</h2>
+
+<ul>
+  <li>[x] Ship <code class="highlighter-rouge">bin</code> inside the npm as well</li>
+</ul>
+
+<h2 id="v0322-2016-09-15">v0.3.22 (2016-09-15)</h2>
+
+<ul>
+  <li>[x] Upgrade from Terraform 0.6.15 -&gt; 0.7.3 again, because all our states cannot be downgraded</li>
+  <li>[x] Better exception handling</li>
+  <li>[x] More control over squashArray exceptions by using full paths</li>
+</ul>
+
+<h2 id="v0321-2016-09-15">v0.3.21 (2016-09-15)</h2>
+
+<ul>
+  <li>[x] Fix node install problem on Trusty with python 2.7.6: https://github.com/ansible/ansible/issues/9966#issuecomment-246373269 https://github.com/nodesource/distributions/issues/354</li>
+  <li>[x] Squash exceptions on non object arrays</li>
+  <li>[x] Downgrade from Terraform 0.7.3 -&gt; 0.6.15 as the first throws EOL errors (test with <code class="highlighter-rouge">statuspage</code> repo and you’ll see)</li>
+  <li>[x] Less verbosity in debug mode</li>
+</ul>
+
+<h2 id="v0320-2016-09-14">v0.3.20 (2016-09-14)</h2>
+
+<ul>
+  <li>[x] Write a higher quality json-&gt;hcl-&gt;json converter</li>
+  <li>[x] Upgrade from Terraform 0.6.15 -&gt; 0.7.3</li>
+  <li>[-] Equal sign vertical alignment for <code class="highlighter-rouge">frey format</code></li>
+  <li>[x] Make HCL the primary format of Freyfiles (vs TOML)</li>
+  <li>[x] Deprecate pyhcl alltogether in favor of json2hcl</li>
+  <li>[x] Upgrade babel</li>
+  <li>[x] Upgrade eslint and fix newly found linting issues</li>
+</ul>
+
+<h2 id="v0319-2016-09-02">v0.3.19 (2016-09-02)</h2>
+
+<ul>
+  <li>[x] Upgrade depurar</li>
+  <li>[x] Change website to use Jekyll (vs middleman)</li>
+  <li>[x] Upgrade to Ansible 2.0.2.0 as that fixes an issue with getting remote tempdir https://github.com/ansible/ansible/issues/13876</li>
+</ul>
+
+<h2 id="v0318-2016-04-16">v0.3.18 (2016-04-16)</h2>
+
+<ul>
+  <li>[x] Do a prepare before remote, so that we can have key decryption, as well as offer newcomers into a project a working <code class="highlighter-rouge">remote</code> (bugfixed)</li>
+</ul>
+
+<h2 id="v0317-2016-04-16">v0.3.17 (2016-04-16)</h2>
+
+<ul>
+  <li>[x] Upgrade to Terraform 0.6.15</li>
+  <li>[x] Make it easier to use Frey without Providers (just the install and setup phase, targeting hostnames you already know)</li>
+  <li>[x] Upgrade pyhcl to 0.2.1 (see https://github.com/virtuald/pyhcl/issues/7)</li>
+</ul>
+
+<h2 id="v0316-2016-04-13">v0.3.16 (2016-04-13)</h2>
+
+<ul>
+  <li>[x] Fix Remote ssh bug using <code class="highlighter-rouge">SHELLARG_PREPEND_AS_IS</code></li>
+  <li>[x] Allow more control over cli args via constants</li>
+  <li>[x] Add support for feeding commands to <code class="highlighter-rouge">Remote</code> via cli</li>
+</ul>
+
+<h2 id="v0315-2016-03-31">v0.3.15 (2016-03-31)</h2>
+
+<ul>
+  <li>[x] Add role: Jenkins</li>
+  <li>[x] Collect all licenses and store them in a good/public place</li>
+  <li>[x] Change <code class="highlighter-rouge">convert.sh</code> to <code class="highlighter-rouge">frey convert</code> making the dependencies installed by <code class="highlighter-rouge">prepare</code></li>
+  <li>[x] Fix bug where projectDir cli argument was not respected if you did not have a Freyfile in it (useful for <code class="highlighter-rouge">convert</code>)</li>
+  <li>[x] Add role: munin-node</li>
+  <li>[x] Command’s exe functions should mostly be in a util class</li>
+</ul>
+
+<h2 id="v0314-2016-03-30">v0.3.14 (2016-03-30)</h2>
+
+<ul>
+  <li>[x] Fix for incomplete Node 0.10 version matching</li>
+</ul>
+
+<h2 id="v0313-2016-03-30">v0.3.13 (2016-03-30)</h2>
+
+<ul>
+  <li>[x] Convert <code class="highlighter-rouge">format.js</code> to ES6 and make it a first class citizen via <code class="highlighter-rouge">frey format</code></li>
+  <li>[x] Implement Backup and Restore via Ansible</li>
+  <li>[x] Upgrade to Ansible 2.0.1.0 as that fixes an issue with sync asking for sudo password https://github.com/ansible/ansible-modules-core/issues/2156</li>
+  <li>[x] Remove invalid underscore prefix from a few public <code class="highlighter-rouge">Shell</code> methods</li>
+  <li>[x] Frey no longer prepares when for <code class="highlighter-rouge">remote</code> to speed up cli operations</li>
+  <li>[x] Make interactive host selection a list, vs checkbox; removing ‘all’</li>
+  <li>[x] Remote now takes hosts from <code class="highlighter-rouge">terraformInventory</code>, not <code class="highlighter-rouge">public_addresses</code></li>
+  <li>[-] rsyslogd-2307: warning: ~ action is deprecated, consider using the ‘stop’ statement instead</li>
+  <li>[x] Enable terraform debug output when <code class="highlighter-rouge">--verbose</code> is turned on</li>
+  <li>[x] Make <code class="highlighter-rouge">env.sh</code> in upstart script optional (our <code class="highlighter-rouge">touch</code> it)</li>
+  <li>[-] Consider running <code class="highlighter-rouge">frey prepare</code> upon <code class="highlighter-rouge">postinstall</code>, and then removing it from the chain (at least the installing of dependencies)</li>
+  <li>[x] Fix bug: <code class="highlighter-rouge">Error: only one instance of babel-polyfill is allowed</code></li>
+</ul>
+
+<h2 id="v0312-2016-03-29">v0.3.12 (2016-03-29)</h2>
+
+<ul>
+  <li>[x] Support for node 0.10 (so Frey is usable on non-Node Travis projects - all Travis boxes ship with node 0.10)</li>
+  <li>[x] Set ansistrano defaults: <code class="highlighter-rouge">ansistrano_current_dir: "current"</code> and <code class="highlighter-rouge">ansistrano_shared_paths: [ logs ]</code></li>
+  <li>[x] Allow to omit <code class="highlighter-rouge">ansistrano_npm</code>, <code class="highlighter-rouge">ansistrano_owner</code>, and <code class="highlighter-rouge">ansistrano_group</code></li>
+</ul>
+
+<h2 id="v0311-2016-03-29">v0.3.11 (2016-03-29)</h2>
+
+<ul>
+  <li>[x] Add run-one to cronjobs</li>
+  <li>[x] Upgrade to Terraform 0.6.14</li>
+  <li>[x] Cleaner debug output for <code class="highlighter-rouge">Shell</code></li>
+  <li>[x] Make smokeping more pleasant (configurable targets, no apache dependency, add TLS_DEFAULT_GATEWAY)</li>
+  <li>[x] Add role: smokeping</li>
+  <li>[x] Add role: prometheus</li>
+  <li>[x] Add role: nginx</li>
+  <li>[x] Add role: fqdn</li>
+  <li>[x] ansistrano: Add npm installer</li>
+  <li>[x] Add role: fqdn</li>
+  <li>[x] Add role: rsyslog</li>
+  <li>[x] ansistrano: Do not use sudo in rsync</li>
+  <li>[x] ansistrano: Ensure <code class="highlighter-rouge">ansistrano_shared_rsync_copy_path</code> exists</li>
+  <li>[x] ansistrano: Don’t assume the shared dir is named <code class="highlighter-rouge">shared</code> as it’s configrable</li>
+  <li>[x] ansistrano: Ensure shared paths sources are present</li>
+  <li>[x] Ridiculous Ansible verbosity for <code class="highlighter-rouge">--verbose</code></li>
+  <li>[x] All templates now start with ``</li>
+  <li>[x] Show copy-pastable commands in Shell’s debug log</li>
+  <li>[x] Add role: upstart</li>
+  <li>[x] Add role: logrotate</li>
+</ul>
+
+<h2 id="v0310-2016-03-22">v0.3.10 (2016-03-22)</h2>
+
+<ul>
+  <li>[x] docs: link to tusd and uppy-server</li>
+  <li>[x] Upgrade role: deploy to 1.4.0</li>
+  <li>[x] Add role: munin</li>
+  <li>[x] Deprecate glob in favor of globby (which we already required in some places)</li>
+</ul>
+
+<h2 id="v039-2016-03-19">v0.3.9 (2016-03-19)</h2>
+
+<ul>
+  <li>[x] Appname can be configured in Freyfile, defaults to git dir. Git dir is in init.paths</li>
+  <li>[x] Show endpoint if such output is available</li>
+</ul>
+
+<h2 id="v038-2016-03-18">v0.3.8 (2016-03-18)</h2>
+
+<ul>
+  <li>[x] Add role: redis</li>
+  <li>[x] Add role: unattended-upgrades</li>
+  <li>[x] Upgrade dependencies</li>
+</ul>
+
+<h2 id="v037-2016-03-17">v0.3.7 (2016-03-17)</h2>
+
+<ul>
+  <li>[x] Ship roles with npm</li>
+</ul>
+
+<h2 id="v036-2016-03-17">v0.3.6 (2016-03-17)</h2>
+
+<ul>
+  <li>[x] Use pyhcl 0.1.15 and 0.2.0 to avoid install crashed</li>
+</ul>
+
+<h2 id="v035-2016-03-17">v0.3.5 (2016-03-17)</h2>
+
+<ul>
+  <li>[x] Add role: nodejs</li>
+  <li>[x] Add roles: deploy &amp; rollback via anistrano https://github.com/ansistrano/deploy/blob/master/README.md</li>
+</ul>
+
+<h2 id="v034-2016-03-16">v0.3.4 (2016-03-16)</h2>
+
+<ul>
+  <li>[-] Write ansible instructions to a single file again, use tags to filter out at runtime</li>
+  <li>[-] No need for underscored <code class="highlighter-rouge">_gatherTerraformArgs</code> functions in most Commands</li>
+  <li>[x] docs: Chain Generator</li>
+  <li>[x] docs: Config Generator (config defaults written to a YAML, merged with descriptions already there)</li>
+  <li>[x] Allow <code class="highlighter-rouge">Remote</code> to connect to all SSH targets</li>
+  <li>[x] Add Digital Ocean support with scenario to showcase different roles: db/www</li>
+  <li>[x] Use extraction of <code class="highlighter-rouge">cast5</code> files as keys for testing by default</li>
+  <li>[x] Error handling for missing infra_state_file</li>
+  <li>[x] Ask confirmation when infra changes are destructive in nature</li>
+  <li>[x] Make <code class="highlighter-rouge">Plan</code> mandatory to <code class="highlighter-rouge">Infra</code> so we can safely add <code class="highlighter-rouge">confirm</code>s based on changes</li>
+  <li>[x] Replace promptYesNo with inquirer</li>
+  <li>[x] How to handle multiple hosts in <code class="highlighter-rouge">Remote</code> as well as facts in <code class="highlighter-rouge">Show</code>?</li>
+  <li>[x] Write temporary facts to proper location vs hardcoded <code class="highlighter-rouge">/tmp/frey-facts</code> in <code class="highlighter-rouge">Show</code></li>
+  <li>[x] Use inquirer to select which hosts to connect to</li>
+  <li>[x] Implement basic show</li>
+  <li>[x] Implement remote</li>
+  <li>[x] Abstract both Terraform and Ansible into App classes</li>
+  <li>[x] Make dynamodb scnario a multi-files-project example</li>
+  <li>[x] Let openstack scenario complete full Frey run</li>
+  <li>[x] Implement setup</li>
+  <li>[x] Implement deploy</li>
+  <li>[x] Implement restart</li>
+  <li>[x] Name encoded files <code class="highlighter-rouge">.cast5</code> vs <code class="highlighter-rouge">.enc</code></li>
+</ul>
+
+<h2 id="v033-2016-03-11">v0.3.3 (2016-03-11)</h2>
+
+<ul>
+  <li>[x] Use internal cast5-cbc encryption vs shelling out to openssl</li>
+  <li>[x] Automatic SSH private key reconstruction via encrypted file and FREY_ENCRYPTION_SECRET</li>
+  <li>[x] Add basic toml formatter</li>
+</ul>
+
+<h2 id="v032-2016-03-09">v0.3.2 (2016-03-09)</h2>
+
+<ul>
+  <li>[x] Release v0.3.2</li>
+  <li>[x] Add support for multi-files-project</li>
+  <li>[x] Put most <code class="highlighter-rouge">paths</code> in <code class="highlighter-rouge">config</code>, and give them  more consistent names</li>
+  <li>[x] Add library support so you can do <code class="highlighter-rouge">- role: ":frey:/consul/v1.0.0"</code></li>
+  <li>[x] Terminology: Project vs Config vs Options. No more recipe</li>
+  <li>[x] Rename Launch to Infra</li>
+  <li>[x] Remove config ambiguity and rename Compile to Config</li>
+  <li>[x] Catch toml parsing errors in a nicer way (forget a quote, see what happens)</li>
+  <li>[x] Deprecate <code class="highlighter-rouge">FREY__RUNTIME</code> in favor of <code class="highlighter-rouge">}</code></li>
+  <li>[x] Rename ansibleCfg to settings (terraform parallelism is also a setting)</li>
+  <li>[x] Make it so that any <code class="highlighter-rouge">FREY_</code> env var, is added as a ansible var and made available in env</li>
+  <li>[x] Make it so that any <code class="highlighter-rouge">FREY_</code> env var, is added as a terraform <code class="highlighter-rouge">var</code> and made available in env</li>
+  <li>[x] Add test scenario for compile</li>
+  <li>[x] Move <code class="highlighter-rouge">terraform-parallelism</code> to global config</li>
+  <li>[x] DRY up render (Prepare &amp; Compile could share one implementation)</li>
+  <li>[x] Strip Frey, move ‘options.os’ to Init (cliargs stay?). Remove options from constructors</li>
+  <li>[x] Make <code class="highlighter-rouge">destroy</code> a feature of Frey so we don’t have to rely on ENV vars in openstack <code class="highlighter-rouge">run.sh</code> destroy</li>
+  <li>[-] Deprecate a generic <code class="highlighter-rouge">Command._buildChildEnv</code> in favor of more specific Ansible/Terraform env building</li>
+  <li>[-] Make arg &amp; env functions of all other commands, mimic Install’s</li>
+  <li>[x] All config should come from Freyfile (think ssh). env only used for secrets. argv only for cwd</li>
+  <li>[x] Fix that <code class="highlighter-rouge">this.runtime.Runtime</code> is thing now. Remove <code class="highlighter-rouge">Runtime</code> alltogehter?</li>
+  <li>[x] Let compile go before prepare so we can use (ssh) config in prepare</li>
+</ul>
+
+<h2 id="v031-2016-02-19">v0.3.1 (2016-02-19)</h2>
+
+<ul>
+  <li>[x] Implement install</li>
+  <li>[x] Signify chained via ▽</li>
+  <li>[x] Use FREY_TARGETS or swap out terraformInventory, to target localhost on Travis and some Vagrant box on OSX with <code class="highlighter-rouge">install</code></li>
+  <li>[x] Get rid of <code class="highlighter-rouge">iterable</code>. Can be replaced by <code class="highlighter-rouge">_.find</code> often</li>
+  <li>[x] Use flatten in utils.render. Then we can replace <code class="highlighter-rouge">}</code> as well as <code class="highlighter-rouge">}</code></li>
+  <li>[x] Tools should be saved under version number only. This way different versions of frey can use their own tested tools, while also still being able to share between same frey installs</li>
+  <li>[x] Upgrade Terraform</li>
+  <li>[x] Upgrade Terraform-inventory</li>
+  <li>[x] Upgrade Ansible</li>
+  <li>[x] Replace mustache with lodash templating</li>
+  <li>[x] Put <code class="highlighter-rouge">_transform</code> in a central place (utils?)</li>
+  <li>[x] New command: <code class="highlighter-rouge">frey compile</code> that’s prefixed to any chain, so you can trust your updates are present in residu, and have its configuration available too (ssh user for instance)</li>
+  <li>[x] Merge chain &amp; commands</li>
+  <li>[x] A project’s package.json should refer to a frey version, which should be used, vs the global one.</li>
+  <li>[x] Ansible must run from configBase</li>
+  <li>[-] If you do a <code class="highlighter-rouge">frey install</code> you must trust that at least the Ansible files are re-compiled</li>
+  <li>[-] Re-introduce <code class="highlighter-rouge">init</code> for local prepare. Such as converting Freyfile to residu. Should be prefixed to chain of commands. Then a single install can benefit from it (remove the <code class="highlighter-rouge">refresh</code> from that acceptance test) and validation can be ran against it/them</li>
+  <li>[x] Frey should traverse cwd upwards until it finds a Freyfile, and use that as default project dir</li>
+  <li>[x] Switch to local npm install if available via LiftOff</li>
+  <li>[x] Consider storing residu files in ~/.frey/tmp/</li>
+  <li>[x] Default appname should be basename of dirname of Freyfile, not pwd</li>
+  <li>[x] replace IPs and UUIDs, it’s possible to disable SKIP_COMPARE_STDIO on the openstack acceptace test</li>
+  <li>[x] Enable Openstack support after https://github.com/adammck/terraform-inventory/issues/14</li>
+  <li>[x] Coveralls</li>
+  <li>[x] Chalk</li>
+  <li>[x] Glob &amp; extend all *.toml. Infra = terraform Config = Ansible.</li>
+  <li>[x] @boot can be a list of functions in an array that’s passed to async.series</li>
+  <li>[x] Get a tf -&gt; tf.json to launch, before splitting out over yml/toml etc</li>
+  <li>[x] Patch up toml -&gt; json</li>
+  <li>[x] Pave way to meaningful output without DEBUG</li>
+  <li>[x] Prompt “Dare I install”? With –force-yes override</li>
+  <li>[x] Move ansibleExe to deps</li>
+  <li>[x] Move versions to deps</li>
+  <li>[x] Port Prepare Instals</li>
+  <li>[x] Linux workstation support (Travis ;))</li>
+  <li>[x] tooldir should be coupled with global Frey install and not per-project</li>
+  <li>[-] /command/module/</li>
+  <li>[-] Class.run becomes Class.main. The new run is Base.run. Which does a waterfall of @boot[], then @main</li>
+  <li>[x] Test &amp; document –no-colors</li>
+  <li>[x] Implement a bailAfter, use it for DynamoDB scenario</li>
+  <li>[x] Amazon free tier dynamodb Travis tests</li>
+  <li>[x] Runtime can be a command module, which can be prefixed to the runChain. Prepare can also be prepended to all. Afterwards, scenarios won’t need to be ordered</li>
+  <li>[x] <code class="highlighter-rouge">./Freyfile.toml</code> ? This means projectdir defaults to <code class="highlighter-rouge">.</code>, and .git check should traverse upwards ‘indefinitely’</li>
+  <li>[x] Move validation to Validate class</li>
+  <li>[x] Port Prepare SSH Keys</li>
+  <li>[x] Port refresh</li>
+  <li>[x] Port plan</li>
+  <li>[x] Port launch</li>
+  <li>[x] Port backup</li>
+  <li>[x] Series/waterfall combination for boot</li>
+  <li>[x] Pass {} to first boot function. Use @options like all other methods to avoid confusion</li>
+  <li>[x] Add (script to add) more encrypted cloud keys</li>
+  <li>[x] exeScript should become exe. new exeScript prepends bash -o</li>
+  <li>[x] Rename integration to acceptance (test) https://en.wikipedia.org/wiki/Acceptance_testing</li>
+  <li>[x] terraform -parallelism=1</li>
+</ul>
+
+<p><a href="/">« Home</a></p>
+
+
+   <footer class="footer">
+  <div class="container">
+    <div class="col-sm-2">
+      <a class ="navbar-brand navbar-brand-logo" href="http://freyproject.io/">
+        <div class="logo">
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" class="img-fluid" viewBox="0 0 260 81.19">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: #fff;
+              }
+            </style>
+          </defs>
+          <title>Frey-White</title>
+          <path class="cls-1" d="M132.7,109.45H75.45A19.61,19.61,0,0,1,94.81,92.94h34.83C137.47,92.94,142,103.56,132.7,109.45Z" transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M116.32,133.93H71.53l2.64-16.51h40.78c7.3,0,11.73,9.23,4.78,15.24A5.21,5.21,0,0,1,116.32,133.93Z" transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M82.47,157.54a2.87,2.87,0,0,1-2,.87H67.61L70.2,141.9h7.38C84.5,141.9,89.43,150.41,82.47,157.54Z" transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M159.4,158.41,166,116.48c2.16-13.54,11.48-14.07,21.55-14.07,4.19,0,11.77.29,15.29.43l-1.63,10.28H185.67c-5.39,0-6.47,1.2-7.31,6.4l-.84,5.25h20.9l-1.65,10.5H175.84l-3.64,23.13Z" transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M211.1,158.41H199.19L204,127.73c.48-3,1-5.51,1.7-8.39,5.18-2.95,12.06-4.2,17.91-4.2a33.61,33.61,0,0,1,4.55.26l-2.52,9.9a26.06,26.06,0,0,0-2.83-.17,16.55,16.55,0,0,0-6.4,1.2c-.46,1.73-.84,3.81-1.15,5.73Z" transform="translate(-67.61 -92.94)"
+          />
+          <path class="cls-1" d="M249.35,115.14c12.18,0,15.82,5.13,15.82,13.71a51.38,51.38,0,0,1-.7,7.69c-.19,1.2-.43,2.47-.74,3.69a181.17,181.17,0,0,1-19.32,2.13l-6.45.36a10.61,10.61,0,0,0-.07,1.17c0,4.05,2.54,5.15,7.62,5.15a120.69,120.69,0,0,0,15.32-1.15l-.46,9.35A107.76,107.76,0,0,1,241.53,159c-11.48,0-15.25-6-15.25-14.89a47,47,0,0,1,.62-7C229.35,121.57,235.23,115.14,249.35,115.14ZM244.86,134c2.4-.12,6-.43,8-.7.12-.41.24-1,.31-1.39a14.62,14.62,0,0,0,.19-2.18c0-3.28-1.58-5-5.56-5-6.5,0-8,4.05-8.87,9.61Z"
+            transform="translate(-67.61 -92.94)" />
+          <path class="cls-1" d="M297.8,115.72h12.27l-28.72,58.42h-12.3l9.68-18.84-10.5-39.58H281l5.61,24Z" transform="translate(-67.61 -92.94)" />
+        </svg>
+        </div>
+      </a>
+    </div>
+    <div class="col-sm-3">
+      <div class="copyright">
+        &copy; 2016 Frey – All rights reserved
+      </div>
+    </div>
+    <nav class="pull-right">
+      <ul>
+        <li>
+          <a href="#">
+            Getting Started
+          </a>
+        </li>
+        <li>
+          <a href="#">
+             Docs
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/kvz/frey">
+             Github
+          </a>
+        </li>
+        <li>
+          <a href="">
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Contact Us
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</footer>
+  </div>
+</body>
+<!--   Core JS Files   -->
+<script src="/assets/js/jquery.min.js" | prepend: site.baseurl }}"></script>
+<script src="/assets/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+<script src="/assets/js/material.min.js" | prepend: site.baseurl }}"></script>
+
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="/assets/js/nouislider.min.js" | prepend: site.baseurl }}"></script>
+
+<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
+<script src="/assets/js/bootstrap-datepicker.js" | prepend: site.baseurl }}"></script>
+
+<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+<script src="/assets/js/material-kit.js" | prepend: site.baseurl }}"></script>
+
+<script type="text/javascript">
+  $().ready(function() {
+    // the body of this function is in assets/material-kit.js
+    materialKit.initSliders();
+    window_width = $(window).width();
+
+    if (window_width >= 992) {
+      big_image = $('.wrapper > .header');
+
+      $(window).on('scroll', materialKitDemo.checkScrollForParallax);
+    }
+
+  });
+</script>
+
+</html>
