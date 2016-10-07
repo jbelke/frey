@@ -4,15 +4,10 @@
 .row {
   background-color: #FFFFFF;
   padding-right: 100px;
-  
-}
-.col-md-8 {
-  padding: 40px;
-  background-color: #FFFFFF;
 }
 .col-md-3 {
   background-clip: content-box;
-  height: 2000px;
+  height: 1800px;
   width: 350px;
 }
 .bg-color {
@@ -29,17 +24,16 @@
   background-color: #EFF2F5;
 }
 div.subitem a.list-group-item {
-    padding-left: 30px;
+  padding-left: 30px;
 }
-h3 {
-  margin-top: 30px;
+h2,h3 {
+  margin-top: 35px;
   color: #003151;
 }
 p {
-  margin-top: 40px;
+  margin-top: 20px;
   color: #A2A2A2;
 }
-
 ol {
   color: #A2A2A2;
 }
