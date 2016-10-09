@@ -62,15 +62,24 @@
 p {
   text-align: left;
 }
-.TerminalBox {
-  margin-top: 50px;
+.FeatureBox div:nth-of-type(odd) {
+  background-color: red;
+}
+.FeatureBox div:nth-child(odd) {
+  background-color: green;
+}
+.FeatureBox {
+  padding: 40px; 
 }
 .FeatureText {
   line-height: 25px;
-  margin: 60px 0 30px 0;
+  padding-top: 20px; 
   background-color: #FFFFFF;
   border: 1px solid #F3F6FA;
-  padding: 20px;
+  padding: 60px;
+}
+.TerminalBox {
+  margin-top: 50px;
 }
 
 /*.img-fluid {
